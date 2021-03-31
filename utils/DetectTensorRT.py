@@ -241,6 +241,7 @@ class DetectTensorRT(QThread):
         self.logger.info("[Func] end_work - after reset stop action - stop action: \n\t" + str(self.stop_action))
 
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         self.results.set_end_time(current_time)
         """if the result of the circle is OK or NG?"""
         if self.results.get_result():
@@ -407,6 +408,7 @@ class DetectTensorRT(QThread):
             # time.sleep(0.005)
 
     def insert_into_db(self, start_time, end_time, result):
+        print(start_time, end_time, result)
         self._mutex.lock()
         try:
             current_date = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -421,10 +423,10 @@ class DetectTensorRT(QThread):
             ''')
             sqlstr = []
             sqlstr.append(start_time)
-            sqlstr.extend(end_time)
+            sqlstr.append(end_time)
             sqlstr.append(result)
             temp = tuple(sqlstr)
-            c.execute('insert into result values (null, ?, ?, ?, ?)', temp)
+            c.execute('insert into result values (null, ?, ?, ?)', temp)
             conn.commit()
             c.close()
             conn.close()

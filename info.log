@@ -2861,3 +2861,748 @@ ModelOutputItem:
 2021-03-31 17:30:17,379 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
 2021-03-31 17:30:17,382 - utils.DetectTensorRT - INFO - [Func] end_work - after reset stop action - stop action: 
 	[TimeItem] time delay:20--start time:1617183017.3827143
+2021-03-31 17:33:17,766 - root - INFO - The application is starting...
+2021-03-31 17:33:18,561 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 
+	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-03-31 17:33:18,562 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 
+	[TimeItem] time delay:20--start time:1617183198.562213
+2021-03-31 17:33:18,563 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 
+	[TimeItem] time delay:20--start time:1617183198.562213
+2021-03-31 17:33:18,563 - utils.DetectTensorRT - INFO - [Func] load_action - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:33:18,564 - root - INFO - Camera: using USB webcam /dev/video0
+2021-03-31 17:33:27,725 - utils.DetectTensorRT - INFO - [Func] start_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183198.562213
+2021-03-31 17:33:27,726 - utils.DetectTensorRT - INFO - [Func] start_work - after reset results - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:33:28,473 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[16, 0, 495, 710]--confidence:0.5016719698905945--cls:0.0--label:person
+2021-03-31 17:33:28,536 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[16, 0, 495, 710]--confidence:0.5016719698905945--cls:0.0--label:person
+2021-03-31 17:33:28,541 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - rotate the CircleQueue
+2021-03-31 17:33:28,542 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current ModelOutputItem: 
+[ModelOutputItem] box:[16, 0, 495, 710]--confidence:0.5016719698905945--cls:0.0--label:person
+2021-03-31 17:33:28,543 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current action: 
+[ActionItem] index:1--category:mouse--confirm frames:1--confirm time:0.30000000000000004--thresh:0.3
+2021-03-31 17:33:28,543 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: True
+2021-03-31 17:33:28,605 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 0, 515, 651]--confidence:0.5017602443695068--cls:0.0--label:person
+2021-03-31 17:33:29,840 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 496, 711]--confidence:0.5019662380218506--cls:0.0--label:person
+2021-03-31 17:33:29,897 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 496, 711]--confidence:0.5019662380218506--cls:0.0--label:person
+2021-03-31 17:33:30,264 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 1, 499, 710]--confidence:0.5152077674865723--cls:0.0--label:person
+2021-03-31 17:33:30,316 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 1, 499, 710]--confidence:0.5152077674865723--cls:0.0--label:person
+2021-03-31 17:33:30,371 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 4, 499, 705]--confidence:0.5111187100410461--cls:0.0--label:person
+2021-03-31 17:33:30,422 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 4, 499, 705]--confidence:0.5111187100410461--cls:0.0--label:person
+2021-03-31 17:33:30,475 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 507, 656]--confidence:0.5878885388374329--cls:0.0--label:person
+2021-03-31 17:33:30,535 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 507, 656]--confidence:0.5878885388374329--cls:0.0--label:person
+2021-03-31 17:33:30,592 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 3, 497, 708]--confidence:0.5454802513122559--cls:0.0--label:person
+2021-03-31 17:33:30,648 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 3, 497, 708]--confidence:0.5454802513122559--cls:0.0--label:person
+2021-03-31 17:33:30,700 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 0, 496, 710]--confidence:0.5384530425071716--cls:0.0--label:person
+2021-03-31 17:33:30,839 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 504, 655]--confidence:0.5359145998954773--cls:0.0--label:person
+2021-03-31 17:33:30,890 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 504, 655]--confidence:0.5359145998954773--cls:0.0--label:person
+2021-03-31 17:33:30,940 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 504, 655]--confidence:0.5359145998954773--cls:0.0--label:person
+2021-03-31 17:33:30,989 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 502, 652]--confidence:0.5740925073623657--cls:0.0--label:person
+2021-03-31 17:33:31,036 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 502, 652]--confidence:0.5740925073623657--cls:0.0--label:person
+2021-03-31 17:33:31,085 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 506, 654]--confidence:0.5684885382652283--cls:0.0--label:person
+2021-03-31 17:33:31,137 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 506, 654]--confidence:0.5684885382652283--cls:0.0--label:person
+2021-03-31 17:33:31,187 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 510, 653]--confidence:0.5412939190864563--cls:0.0--label:person
+2021-03-31 17:33:31,239 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 510, 653]--confidence:0.5412939190864563--cls:0.0--label:person
+2021-03-31 17:33:31,471 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 510, 647]--confidence:0.5180737376213074--cls:0.0--label:person
+2021-03-31 17:33:31,524 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 510, 647]--confidence:0.5180737376213074--cls:0.0--label:person
+2021-03-31 17:33:31,572 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 0, 507, 650]--confidence:0.5285078883171082--cls:0.0--label:person
+2021-03-31 17:33:31,621 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 0, 507, 650]--confidence:0.5285078883171082--cls:0.0--label:person
+2021-03-31 17:33:31,674 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 511, 652]--confidence:0.5566551089286804--cls:0.0--label:person
+2021-03-31 17:33:31,723 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 511, 652]--confidence:0.5566551089286804--cls:0.0--label:person
+2021-03-31 17:33:31,774 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 0, 516, 649]--confidence:0.5225814580917358--cls:0.0--label:person
+2021-03-31 17:33:31,825 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 0, 516, 649]--confidence:0.5225814580917358--cls:0.0--label:person
+2021-03-31 17:33:31,872 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 510, 653]--confidence:0.5685594081878662--cls:0.0--label:person
+2021-03-31 17:33:31,922 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 510, 653]--confidence:0.5685594081878662--cls:0.0--label:person
+2021-03-31 17:33:32,065 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 509, 656]--confidence:0.5799111127853394--cls:0.0--label:person
+2021-03-31 17:33:32,116 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 509, 656]--confidence:0.5799111127853394--cls:0.0--label:person
+2021-03-31 17:33:32,163 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 0, 508, 653]--confidence:0.587801456451416--cls:0.0--label:person
+2021-03-31 17:33:32,213 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 0, 508, 653]--confidence:0.587801456451416--cls:0.0--label:person
+2021-03-31 17:33:32,264 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[12, 0, 500, 710]--confidence:0.5080564618110657--cls:0.0--label:person
+2021-03-31 17:33:32,314 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[12, 0, 500, 710]--confidence:0.5080564618110657--cls:0.0--label:person
+2021-03-31 17:33:32,366 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 506, 661]--confidence:0.5752759575843811--cls:0.0--label:person
+2021-03-31 17:33:32,415 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 506, 661]--confidence:0.5752759575843811--cls:0.0--label:person
+2021-03-31 17:33:32,467 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 512, 657]--confidence:0.5490140318870544--cls:0.0--label:person
+2021-03-31 17:33:32,518 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 512, 657]--confidence:0.5490140318870544--cls:0.0--label:person
+2021-03-31 17:33:32,571 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 508, 654]--confidence:0.5655199885368347--cls:0.0--label:person
+2021-03-31 17:33:32,623 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 508, 654]--confidence:0.5655199885368347--cls:0.0--label:person
+2021-03-31 17:33:32,673 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 507, 655]--confidence:0.5893659591674805--cls:0.0--label:person
+2021-03-31 17:33:32,723 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 507, 655]--confidence:0.5893659591674805--cls:0.0--label:person
+2021-03-31 17:33:32,773 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 508, 653]--confidence:0.6041407585144043--cls:0.0--label:person
+2021-03-31 17:33:32,823 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 508, 653]--confidence:0.6041407585144043--cls:0.0--label:person
+2021-03-31 17:33:32,871 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 507, 660]--confidence:0.5051161050796509--cls:0.0--label:person
+2021-03-31 17:33:32,919 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 507, 660]--confidence:0.5051161050796509--cls:0.0--label:person
+2021-03-31 17:33:32,968 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 513, 654]--confidence:0.507943332195282--cls:0.0--label:person
+2021-03-31 17:33:33,018 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 513, 654]--confidence:0.507943332195282--cls:0.0--label:person
+2021-03-31 17:33:33,244 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 507, 659]--confidence:0.5346091985702515--cls:0.0--label:person
+2021-03-31 17:33:33,294 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 507, 659]--confidence:0.5346091985702515--cls:0.0--label:person
+2021-03-31 17:33:33,344 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 507, 659]--confidence:0.5346091985702515--cls:0.0--label:person
+2021-03-31 17:33:33,397 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 511, 651]--confidence:0.5328043699264526--cls:0.0--label:person
+2021-03-31 17:33:33,446 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[10, 0, 509, 655]--confidence:0.5156170725822449--cls:0.0--label:person
+2021-03-31 17:33:33,494 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[10, 0, 509, 655]--confidence:0.5156170725822449--cls:0.0--label:person
+2021-03-31 17:33:33,548 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 509, 657]--confidence:0.5787386894226074--cls:0.0--label:person
+2021-03-31 17:33:33,597 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 509, 657]--confidence:0.5787386894226074--cls:0.0--label:person
+2021-03-31 17:33:33,646 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 508, 662]--confidence:0.5353370904922485--cls:0.0--label:person
+2021-03-31 17:33:33,698 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 508, 662]--confidence:0.5353370904922485--cls:0.0--label:person
+2021-03-31 17:33:33,744 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 0, 505, 659]--confidence:0.5380420088768005--cls:0.0--label:person
+2021-03-31 17:33:33,792 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 0, 505, 659]--confidence:0.5380420088768005--cls:0.0--label:person
+2021-03-31 17:33:33,841 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 0, 505, 659]--confidence:0.5380420088768005--cls:0.0--label:person
+2021-03-31 17:33:33,892 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 5, 498, 705]--confidence:0.5153167247772217--cls:0.0--label:person
+2021-03-31 17:33:33,944 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 5, 498, 705]--confidence:0.5153167247772217--cls:0.0--label:person
+2021-03-31 17:33:33,997 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 32, 443, 688]--confidence:0.5228995680809021--cls:0.0--label:person
+2021-03-31 17:33:34,046 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 505, 664]--confidence:0.5411043763160706--cls:0.0--label:person
+2021-03-31 17:33:34,094 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 505, 664]--confidence:0.5411043763160706--cls:0.0--label:person
+2021-03-31 17:33:34,146 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 505, 664]--confidence:0.5411043763160706--cls:0.0--label:person
+2021-03-31 17:33:34,246 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 496, 710]--confidence:0.5338191986083984--cls:0.0--label:person
+2021-03-31 17:33:34,294 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 496, 710]--confidence:0.5338191986083984--cls:0.0--label:person
+2021-03-31 17:33:34,341 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 496, 710]--confidence:0.5338191986083984--cls:0.0--label:person
+2021-03-31 17:33:34,389 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 30, 441, 689]--confidence:0.5402022004127502--cls:0.0--label:person
+2021-03-31 17:33:34,439 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 30, 441, 689]--confidence:0.5402022004127502--cls:0.0--label:person
+2021-03-31 17:33:34,491 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 5, 491, 707]--confidence:0.5746214985847473--cls:0.0--label:person
+2021-03-31 17:33:34,541 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 5, 491, 707]--confidence:0.5746214985847473--cls:0.0--label:person
+2021-03-31 17:33:34,590 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 507, 655]--confidence:0.5509986281394958--cls:0.0--label:person
+2021-03-31 17:33:34,641 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 507, 655]--confidence:0.5509986281394958--cls:0.0--label:person
+2021-03-31 17:33:34,695 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 39, 440, 684]--confidence:0.544529139995575--cls:0.0--label:person
+2021-03-31 17:33:34,742 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 39, 442, 680]--confidence:0.541003406047821--cls:0.0--label:person
+2021-03-31 17:33:34,790 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 39, 442, 680]--confidence:0.541003406047821--cls:0.0--label:person
+2021-03-31 17:33:34,838 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 39, 442, 680]--confidence:0.541003406047821--cls:0.0--label:person
+2021-03-31 17:33:34,888 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 4, 494, 708]--confidence:0.5418983101844788--cls:0.0--label:person
+2021-03-31 17:33:34,937 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 4, 494, 708]--confidence:0.5418983101844788--cls:0.0--label:person
+2021-03-31 17:33:34,986 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 502, 653]--confidence:0.5786974430084229--cls:0.0--label:person
+2021-03-31 17:33:35,034 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[9, 0, 502, 653]--confidence:0.5786974430084229--cls:0.0--label:person
+2021-03-31 17:33:35,082 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 9, 495, 704]--confidence:0.5945543646812439--cls:0.0--label:person
+2021-03-31 17:33:35,131 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 9, 495, 704]--confidence:0.5945543646812439--cls:0.0--label:person
+2021-03-31 17:33:35,178 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[12, 0, 498, 657]--confidence:0.5915685296058655--cls:0.0--label:person
+2021-03-31 17:33:35,229 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[12, 0, 498, 657]--confidence:0.5915685296058655--cls:0.0--label:person
+2021-03-31 17:33:35,281 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 502, 665]--confidence:0.5848873257637024--cls:0.0--label:person
+2021-03-31 17:33:35,330 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 0, 502, 665]--confidence:0.5848873257637024--cls:0.0--label:person
+2021-03-31 17:33:35,380 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 505, 657]--confidence:0.560683012008667--cls:0.0--label:person
+2021-03-31 17:33:35,431 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 505, 657]--confidence:0.560683012008667--cls:0.0--label:person
+2021-03-31 17:33:35,478 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 501, 655]--confidence:0.5760316252708435--cls:0.0--label:person
+2021-03-31 17:33:35,530 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 0, 501, 655]--confidence:0.5760316252708435--cls:0.0--label:person
+2021-03-31 17:33:35,580 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 1, 496, 710]--confidence:0.5058867931365967--cls:0.0--label:person
+2021-03-31 17:33:35,630 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 1, 496, 710]--confidence:0.5058867931365967--cls:0.0--label:person
+2021-03-31 17:33:35,681 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 508, 655]--confidence:0.5289208292961121--cls:0.0--label:person
+2021-03-31 17:33:35,729 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 508, 655]--confidence:0.5289208292961121--cls:0.0--label:person
+2021-03-31 17:33:35,778 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 510, 654]--confidence:0.5854501724243164--cls:0.0--label:person
+2021-03-31 17:33:35,824 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 510, 654]--confidence:0.5854501724243164--cls:0.0--label:person
+2021-03-31 17:33:35,875 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 8, 497, 703]--confidence:0.5508320331573486--cls:0.0--label:person
+2021-03-31 17:33:35,925 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 8, 497, 703]--confidence:0.5508320331573486--cls:0.0--label:person
+2021-03-31 17:33:35,974 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 6, 495, 705]--confidence:0.5329258441925049--cls:0.0--label:person
+2021-03-31 17:33:36,023 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[14, 6, 495, 705]--confidence:0.5329258441925049--cls:0.0--label:person
+2021-03-31 17:33:36,070 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 505, 657]--confidence:0.5731372833251953--cls:0.0--label:person
+2021-03-31 17:33:36,118 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 505, 657]--confidence:0.5731372833251953--cls:0.0--label:person
+2021-03-31 17:33:36,167 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 38, 440, 680]--confidence:0.545509934425354--cls:0.0--label:person
+2021-03-31 17:33:36,217 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 38, 440, 680]--confidence:0.545509934425354--cls:0.0--label:person
+2021-03-31 17:33:36,269 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 507, 657]--confidence:0.5446116924285889--cls:0.0--label:person
+2021-03-31 17:33:36,320 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 507, 657]--confidence:0.5446116924285889--cls:0.0--label:person
+2021-03-31 17:33:36,370 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[18, 1, 493, 709]--confidence:0.5614126324653625--cls:0.0--label:person
+2021-03-31 17:33:36,421 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[18, 1, 493, 709]--confidence:0.5614126324653625--cls:0.0--label:person
+2021-03-31 17:33:36,562 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 507, 663]--confidence:0.5267693996429443--cls:0.0--label:person
+2021-03-31 17:33:36,610 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 507, 663]--confidence:0.5267693996429443--cls:0.0--label:person
+2021-03-31 17:33:36,746 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 509, 655]--confidence:0.5369101762771606--cls:0.0--label:person
+2021-03-31 17:33:36,798 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 509, 655]--confidence:0.5369101762771606--cls:0.0--label:person
+2021-03-31 17:33:36,846 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 507, 651]--confidence:0.49511227011680603--cls:0.0--label:person
+2021-03-31 17:33:36,894 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 507, 651]--confidence:0.49511227011680603--cls:0.0--label:person
+2021-03-31 17:33:36,945 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 507, 651]--confidence:0.49511227011680603--cls:0.0--label:person
+2021-03-31 17:33:36,995 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 4, 498, 707]--confidence:0.5131244659423828--cls:0.0--label:person
+2021-03-31 17:33:37,045 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 4, 498, 707]--confidence:0.5131244659423828--cls:0.0--label:person
+2021-03-31 17:33:37,094 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[16, 3, 496, 706]--confidence:0.5190767049789429--cls:0.0--label:person
+2021-03-31 17:33:37,142 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[16, 3, 496, 706]--confidence:0.5190767049789429--cls:0.0--label:person
+2021-03-31 17:33:37,191 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 510, 646]--confidence:0.49244657158851624--cls:0.0--label:person
+2021-03-31 17:33:37,241 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 510, 646]--confidence:0.49244657158851624--cls:0.0--label:person
+2021-03-31 17:33:37,291 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 5, 501, 705]--confidence:0.5023671984672546--cls:0.0--label:person
+2021-03-31 17:33:37,341 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 5, 501, 705]--confidence:0.5023671984672546--cls:0.0--label:person
+2021-03-31 17:33:37,752 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 509, 655]--confidence:0.4957823157310486--cls:0.0--label:person
+2021-03-31 17:33:37,801 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[8, 0, 509, 655]--confidence:0.4957823157310486--cls:0.0--label:person
+2021-03-31 17:33:37,848 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 510, 654]--confidence:0.4947097897529602--cls:0.0--label:person
+2021-03-31 17:33:37,898 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 510, 654]--confidence:0.4947097897529602--cls:0.0--label:person
+2021-03-31 17:33:37,945 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 510, 654]--confidence:0.4947097897529602--cls:0.0--label:person
+2021-03-31 17:33:37,992 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 36, 442, 683]--confidence:0.5141556262969971--cls:0.0--label:person
+2021-03-31 17:33:38,041 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 36, 442, 683]--confidence:0.5141556262969971--cls:0.0--label:person
+2021-03-31 17:33:38,090 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 1, 499, 710]--confidence:0.5304246544837952--cls:0.0--label:person
+2021-03-31 17:33:38,141 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 1, 499, 710]--confidence:0.5304246544837952--cls:0.0--label:person
+2021-03-31 17:33:38,193 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 501, 655]--confidence:0.5569026470184326--cls:0.0--label:person
+2021-03-31 17:33:38,244 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[3, 0, 501, 655]--confidence:0.5569026470184326--cls:0.0--label:person
+2021-03-31 17:33:38,472 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 505, 651]--confidence:0.535293698310852--cls:0.0--label:person
+2021-03-31 17:33:38,521 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 0, 505, 651]--confidence:0.535293698310852--cls:0.0--label:person
+2021-03-31 17:33:38,661 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 0, 504, 667]--confidence:0.5350239872932434--cls:0.0--label:person
+2021-03-31 17:33:38,708 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 0, 504, 667]--confidence:0.5350239872932434--cls:0.0--label:person
+2021-03-31 17:33:39,161 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[10, 10, 497, 703]--confidence:0.5339639782905579--cls:0.0--label:person
+2021-03-31 17:33:39,211 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[10, 10, 497, 703]--confidence:0.5339639782905579--cls:0.0--label:person
+2021-03-31 17:33:39,257 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 505, 652]--confidence:0.5816937685012817--cls:0.0--label:person
+2021-03-31 17:33:39,307 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 0, 505, 652]--confidence:0.5816937685012817--cls:0.0--label:person
+2021-03-31 17:33:39,355 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 510, 651]--confidence:0.5392179489135742--cls:0.0--label:person
+2021-03-31 17:33:39,405 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 510, 651]--confidence:0.5392179489135742--cls:0.0--label:person
+2021-03-31 17:33:39,457 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 1, 496, 711]--confidence:0.5053696632385254--cls:0.0--label:person
+2021-03-31 17:33:39,506 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 1, 496, 711]--confidence:0.5053696632385254--cls:0.0--label:person
+2021-03-31 17:33:39,558 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 1, 496, 708]--confidence:0.5136467218399048--cls:0.0--label:person
+2021-03-31 17:33:39,606 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[15, 1, 496, 708]--confidence:0.5136467218399048--cls:0.0--label:person
+2021-03-31 17:33:39,658 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 506, 658]--confidence:0.5505014657974243--cls:0.0--label:person
+2021-03-31 17:33:39,708 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[5, 0, 506, 658]--confidence:0.5505014657974243--cls:0.0--label:person
+2021-03-31 17:33:39,755 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 503, 659]--confidence:0.5067276358604431--cls:0.0--label:person
+2021-03-31 17:33:39,811 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[11, 0, 503, 659]--confidence:0.5067276358604431--cls:0.0--label:person
+2021-03-31 17:33:39,860 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[12, 0, 494, 712]--confidence:0.5222606658935547--cls:0.0--label:person
+2021-03-31 17:33:39,909 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[12, 0, 494, 712]--confidence:0.5222606658935547--cls:0.0--label:person
+2021-03-31 17:33:39,956 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 4, 497, 706]--confidence:0.5018230676651001--cls:0.0--label:person
+2021-03-31 17:33:40,008 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 4, 497, 706]--confidence:0.5018230676651001--cls:0.0--label:person
+2021-03-31 17:33:41,880 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[10, 0, 514, 652]--confidence:0.4918045401573181--cls:0.0--label:person
+2021-03-31 17:33:41,928 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[10, 0, 514, 652]--confidence:0.4918045401573181--cls:0.0--label:person
+2021-03-31 17:33:43,488 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 8, 503, 706]--confidence:0.5044263005256653--cls:0.0--label:person
+2021-03-31 17:33:43,542 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 8, 503, 706]--confidence:0.5044263005256653--cls:0.0--label:person
+2021-03-31 17:33:48,557 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: False
+2021-03-31 17:33:48,566 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - reset the remain node in results: 
+['True', 'False', 'False', 'False']
+2021-03-31 17:33:48,578 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-03-31 17:33:48,579 - utils.DetectTensorRT - INFO - [Func] end_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183228.5791302
+2021-03-31 17:35:22,331 - root - INFO - The application is starting...
+2021-03-31 17:35:23,307 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 
+	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-03-31 17:35:23,308 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 
+	[TimeItem] time delay:20--start time:1617183323.3083963
+2021-03-31 17:35:23,309 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 
+	[TimeItem] time delay:20--start time:1617183323.3083963
+2021-03-31 17:35:23,309 - utils.DetectTensorRT - INFO - [Func] load_action - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:35:23,310 - root - INFO - Camera: using USB webcam /dev/video0
+2021-03-31 17:35:49,483 - utils.DetectTensorRT - INFO - [Func] start_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183323.3083963
+2021-03-31 17:35:49,496 - utils.DetectTensorRT - INFO - [Func] start_work - after reset results - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:36:00,073 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[7, 11, 521, 712]--confidence:0.51995849609375--cls:0.0--label:person
+2021-03-31 17:36:00,251 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 50, 502, 719]--confidence:0.506304144859314--cls:0.0--label:person
+2021-03-31 17:36:00,544 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - rotate the CircleQueue
+2021-03-31 17:36:00,545 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current ModelOutputItem: 
+[ModelOutputItem] box:[13, 50, 502, 719]--confidence:0.506304144859314--cls:0.0--label:person
+2021-03-31 17:36:00,546 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current action: 
+[ActionItem] index:1--category:mouse--confirm frames:1--confirm time:0.30000000000000004--thresh:0.3
+2021-03-31 17:36:00,546 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: True
+2021-03-31 17:36:00,690 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[13, 51, 500, 719]--confidence:0.5160211324691772--cls:0.0--label:person
+2021-03-31 17:36:01,651 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 65, 512, 719]--confidence:0.49487200379371643--cls:0.0--label:person
+2021-03-31 17:36:01,711 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 65, 512, 719]--confidence:0.49487200379371643--cls:0.0--label:person
+2021-03-31 17:36:02,444 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 62, 514, 719]--confidence:0.49622347950935364--cls:0.0--label:person
+2021-03-31 17:36:02,505 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 62, 514, 719]--confidence:0.49622347950935364--cls:0.0--label:person
+2021-03-31 17:36:02,647 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[2, 61, 516, 719]--confidence:0.4929749071598053--cls:0.0--label:person
+2021-03-31 17:36:02,703 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[2, 61, 516, 719]--confidence:0.4929749071598053--cls:0.0--label:person
+2021-03-31 17:36:02,754 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 65, 510, 719]--confidence:0.5975590348243713--cls:0.0--label:person
+2021-03-31 17:36:02,811 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 65, 510, 719]--confidence:0.5975590348243713--cls:0.0--label:person
+2021-03-31 17:36:02,864 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 65, 509, 719]--confidence:0.6157230138778687--cls:0.0--label:person
+2021-03-31 17:36:05,947 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 39, 512, 719]--confidence:0.5314295887947083--cls:0.0--label:person
+2021-03-31 17:36:05,999 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[6, 39, 512, 719]--confidence:0.5314295887947083--cls:0.0--label:person
+2021-03-31 17:36:06,052 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 41, 514, 719]--confidence:0.5172971487045288--cls:0.0--label:person
+2021-03-31 17:36:06,103 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 41, 514, 719]--confidence:0.5172971487045288--cls:0.0--label:person
+2021-03-31 17:36:06,249 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[2, 46, 512, 719]--confidence:0.5067963600158691--cls:0.0--label:person
+2021-03-31 17:36:06,298 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[2, 46, 512, 719]--confidence:0.5067963600158691--cls:0.0--label:person
+2021-03-31 17:36:06,458 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[1, 44, 513, 719]--confidence:0.5131489634513855--cls:0.0--label:person
+2021-03-31 17:36:06,512 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[1, 44, 513, 719]--confidence:0.5131489634513855--cls:0.0--label:person
+2021-03-31 17:36:06,563 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 46, 513, 719]--confidence:0.5201204419136047--cls:0.0--label:person
+2021-03-31 17:36:06,625 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[1, 46, 516, 719]--confidence:0.4945765435695648--cls:0.0--label:person
+2021-03-31 17:36:06,678 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[1, 46, 516, 719]--confidence:0.4945765435695648--cls:0.0--label:person
+2021-03-31 17:36:06,946 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 15, 520, 698]--confidence:0.4922506809234619--cls:0.0--label:person
+2021-03-31 17:36:06,999 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 15, 520, 698]--confidence:0.4922506809234619--cls:0.0--label:person
+2021-03-31 17:36:12,543 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 58, 513, 719]--confidence:0.5020263195037842--cls:0.0--label:person
+2021-03-31 17:36:12,608 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[4, 58, 513, 719]--confidence:0.5020263195037842--cls:0.0--label:person
+2021-03-31 17:36:13,515 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 75, 516, 719]--confidence:0.49144378304481506--cls:0.0--label:person
+2021-03-31 17:36:13,562 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 75, 516, 719]--confidence:0.49144378304481506--cls:0.0--label:person
+2021-03-31 17:36:13,604 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 75, 516, 719]--confidence:0.49144378304481506--cls:0.0--label:person
+2021-03-31 17:36:20,556 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: False
+2021-03-31 17:36:20,606 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - reset the remain node in results: 
+['True', 'False', 'False', 'False']
+2021-03-31 17:36:20,778 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-03-31 17:36:21,128 - utils.DetectTensorRT - INFO - [Func] end_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183381.1283128
+2021-03-31 17:38:16,899 - root - INFO - The application is starting...
+2021-03-31 17:38:18,402 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 
+	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-03-31 17:38:18,404 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 
+	[TimeItem] time delay:20--start time:1617183498.404795
+2021-03-31 17:38:18,405 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 
+	[TimeItem] time delay:20--start time:1617183498.404795
+2021-03-31 17:38:18,406 - utils.DetectTensorRT - INFO - [Func] load_action - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:38:18,406 - root - INFO - Camera: using USB webcam /dev/video0
+2021-03-31 17:38:33,855 - utils.DetectTensorRT - INFO - [Func] start_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183498.404795
+2021-03-31 17:38:33,867 - utils.DetectTensorRT - INFO - [Func] start_work - after reset results - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:38:41,360 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[0, 59, 1073, 719]--confidence:0.49695783853530884--cls:0.0--label:person
+2021-03-31 17:38:41,412 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[55, 62, 1032, 719]--confidence:0.5054837465286255--cls:0.0--label:person
+2021-03-31 17:38:41,419 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - rotate the CircleQueue
+2021-03-31 17:38:41,420 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current ModelOutputItem: 
+[ModelOutputItem] box:[55, 62, 1032, 719]--confidence:0.5054837465286255--cls:0.0--label:person
+2021-03-31 17:38:41,421 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current action: 
+[ActionItem] index:1--category:mouse--confirm frames:1--confirm time:0.30000000000000004--thresh:0.3
+2021-03-31 17:38:41,421 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: True
+2021-03-31 17:38:41,815 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[38, 46, 1052, 719]--confidence:0.6911752820014954--cls:0.0--label:person
+2021-03-31 17:38:41,862 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[42, 81, 1038, 719]--confidence:0.641839325428009--cls:0.0--label:person
+2021-03-31 17:39:01,448 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: False
+2021-03-31 17:39:01,451 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - reset the remain node in results: 
+['True', 'False', 'False', 'False']
+2021-03-31 17:39:01,475 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-03-31 17:39:01,481 - utils.DetectTensorRT - INFO - [Func] end_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183541.481851
+2021-03-31 17:42:00,027 - root - INFO - The application is starting...
+2021-03-31 17:42:01,471 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 
+	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-03-31 17:42:01,473 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 
+	[TimeItem] time delay:20--start time:1617183721.4738567
+2021-03-31 17:42:01,474 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 
+	[TimeItem] time delay:20--start time:1617183721.4738567
+2021-03-31 17:42:01,475 - utils.DetectTensorRT - INFO - [Func] load_action - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:42:01,475 - root - INFO - Camera: using USB webcam /dev/video0
+2021-03-31 17:42:17,539 - utils.DetectTensorRT - INFO - [Func] start_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183721.4738567
+2021-03-31 17:42:17,548 - utils.DetectTensorRT - INFO - [Func] start_work - after reset results - results: 
+	['None', 'None', 'None', 'None']
+2021-03-31 17:42:27,724 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[27, 196, 819, 719]--confidence:0.552524983882904--cls:0.0--label:person
+2021-03-31 17:42:27,779 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[27, 196, 819, 719]--confidence:0.552524983882904--cls:0.0--label:person
+2021-03-31 17:42:27,785 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - rotate the CircleQueue
+2021-03-31 17:42:27,787 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current ModelOutputItem: 
+[ModelOutputItem] box:[27, 196, 819, 719]--confidence:0.552524983882904--cls:0.0--label:person
+2021-03-31 17:42:27,788 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - current action: 
+[ActionItem] index:1--category:mouse--confirm frames:1--confirm time:0.30000000000000004--thresh:0.3
+2021-03-31 17:42:27,821 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: True
+2021-03-31 17:42:27,887 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[56, 67, 845, 719]--confidence:0.6168381571769714--cls:0.0--label:person
+2021-03-31 17:42:27,943 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[56, 67, 845, 719]--confidence:0.6168381571769714--cls:0.0--label:person
+2021-03-31 17:42:28,016 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[52, 75, 853, 719]--confidence:0.7928510904312134--cls:0.0--label:person
+2021-03-31 17:42:28,074 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[52, 75, 853, 719]--confidence:0.7928510904312134--cls:0.0--label:person
+2021-03-31 17:42:28,125 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[50, 65, 841, 719]--confidence:0.7841533422470093--cls:0.0--label:person
+2021-03-31 17:42:28,179 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[50, 65, 841, 719]--confidence:0.7841533422470093--cls:0.0--label:person
+2021-03-31 17:42:28,234 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[21, 76, 842, 719]--confidence:0.7019709348678589--cls:0.0--label:person
+2021-03-31 17:42:28,282 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - --------------------------------------------------------
+ModelOutputItem: 
+[ModelOutputItem] box:[21, 76, 842, 719]--confidence:0.7019709348678589--cls:0.0--label:person
+2021-03-31 17:42:47,845 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - change allow_close to: False
+2021-03-31 17:42:47,851 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - reset the remain node in results: 
+['True', 'False', 'False', 'False']
+2021-03-31 17:42:47,862 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-03-31 17:42:47,864 - utils.DetectTensorRT - INFO - [Func] end_work - after reset stop action - stop action: 
+	[TimeItem] time delay:20--start time:1617183767.8641264
+2021-03-31 17:42:48,984 - utils.DetectTensorRT - INFO - [Func] end_work - after reset results - results: 
+	['None', 'None', 'None', 'None']
