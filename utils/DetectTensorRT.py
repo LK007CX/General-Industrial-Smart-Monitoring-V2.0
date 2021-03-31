@@ -258,8 +258,6 @@ class DetectTensorRT(QThread):
         self.partial_result_Signal.emit(self.results)
         print("End of a work cycle.\n")
 
-
-
     def loop_and_detect(self):
         detect_labels = [item.category for item in self.item_list]  # all labels to be detected
         fps = 0.0
