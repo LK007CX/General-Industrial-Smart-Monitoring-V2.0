@@ -208,7 +208,7 @@ class DetectTensorRT(QThread):
 
     def start_work(self, save_string, width, height):
         """reset the stop action."""
-        self.stop_action.reset()
+        # self.stop_action.reset()
         self.logger.info("[Func] start_work - after reset stop action - stop action: \n\t" + str(self.stop_action))
 
         print("Start of a work circle.")
@@ -224,6 +224,8 @@ class DetectTensorRT(QThread):
         self.partial_result_Signal.emit(self.results)
 
     def end_work(self):
+
+        self.allow_close = False
         """reset the CircleQueue"""
         for i in range(len(self.actionQueue)):
             self.actionQueue.rotate()
@@ -256,6 +258,8 @@ class DetectTensorRT(QThread):
         self.partial_result_Signal.emit(self.results)
         print("End of a work cycle.\n")
 
+
+
     def loop_and_detect(self):
         detect_labels = [item.category for item in self.item_list]  # all labels to be detected
         fps = 0.0
@@ -266,6 +270,7 @@ class DetectTensorRT(QThread):
                 break
 
             stop_flag = True  # to assert the timeout function can be carried out
+            # self.allow_close = False # just when the index of current action is above or equal 1, allow close can be True
             boxes, confs, clss = self.trt_yolo.detect(img, self.conf_th)  # model output results
 
             # filter labels
@@ -325,11 +330,12 @@ class DetectTensorRT(QThread):
                     if self.current_action.index == 1:
 
                         self.allow_close = True
+                        self.stop_action.reset()
                         self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
                     # do not allow close the circle
-                    if self.current_action.index == (len(self.actionQueue) - 2):
-                        self.allow_close = False
-                        self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
+                    # if self.current_action.index == (len(self.actionQueue) - 2):
+                    #     self.allow_close = False
+                    #     self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
 
                 stop_flag = False
                 if self.allow_close:
