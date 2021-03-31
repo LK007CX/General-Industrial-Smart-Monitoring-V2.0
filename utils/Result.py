@@ -9,6 +9,8 @@ class Result:
     def __init__(self, length):
         self._result_list = [None] * length
         self.init(length)
+        self._start_time = None
+        self._end_time = None
 
     def __len__(self):
         return len(self._result_list)
@@ -34,6 +36,8 @@ class Result:
     def reset_result(self):
         for i in range(len(self)):
             self._result_list[i].set_result(None)
+        self._start_time = None
+        self._end_time = None
 
     def get_result(self):
         """
@@ -46,6 +50,18 @@ class Result:
             if not self._result_list[i].get_result():
                 return False
         return True
+
+    def get_start_time(self):
+        return self._start_time
+
+    def set_start_time(self, start_time):
+        self._start_time = start_time
+
+    def get_end_time(self):
+        return self._end_time
+
+    def set_end_time(self, end_time):
+        self._end_time = end_time
 
 
 if __name__ == '__main__':

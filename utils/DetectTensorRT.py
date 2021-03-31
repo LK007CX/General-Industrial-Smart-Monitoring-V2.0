@@ -138,6 +138,8 @@ class DetectTensorRT(QThread):
         self.logger = logging.getLogger("utils.DetectTensorRT")
         # self.logger.info("create an instance from utils.DetectTensorRT")
 
+        self._mutex = QMutex()
+
     def load_action(self):
         """enqueue the action to the CircleQueue"""
         for action in self.args.item_list:
@@ -206,7 +208,7 @@ class DetectTensorRT(QThread):
         """emit a signal that will display the state of partial result."""
         self.partial_result_Signal.emit(self.results)
 
-    def start_work(self, save_string, width, height):
+    def start_work(self, save_string, width, height, current_time):
         """reset the stop action."""
         # self.stop_action.reset()
         self.logger.info("[Func] start_work - after reset stop action - stop action: \n\t" + str(self.stop_action))
@@ -218,6 +220,7 @@ class DetectTensorRT(QThread):
 
         """reset the results."""
         self.results.reset_result()
+        self.results.set_start_time(current_time)
         self.logger.info("[Func] start_work - after reset results - results: \n\t" + str(self.results))
 
         """emit the signal to main ui."""
@@ -238,6 +241,7 @@ class DetectTensorRT(QThread):
         self.logger.info("[Func] end_work - after reset stop action - stop action: \n\t" + str(self.stop_action))
 
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.results.set_end_time(current_time)
         """if the result of the circle is OK or NG?"""
         if self.results.get_result():
             self.log_Signal.emit(current_time, "OK")
@@ -251,6 +255,12 @@ class DetectTensorRT(QThread):
                 self.end_save_task_signal.emit(False, self.args.only_save_ng_video)
             """GPIO output."""
             self.gpio_signal.emit()
+
+
+        # db
+        _ = "OK" if self.results.get_result() else "NG"
+        self.insert_into_db(self.results.get_start_time(), self.results.get_end_time(), _)
+
         """reset the results."""
         self.results.reset_result()
         self.logger.info("[Func] end_work - after reset results - results: \n\t" + str(self.results))
@@ -322,7 +332,7 @@ class DetectTensorRT(QThread):
 
                     if self.current_action.index == 0:
                         self.logger.info("[Func] loop_and_detect - do start_work")
-                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height)
+                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height, current_time)
 
                     # allow close the circle
                     if self.current_action.index == 1:
@@ -396,39 +406,37 @@ class DetectTensorRT(QThread):
             tic = toc
             # time.sleep(0.005)
 
-    def insert_into_db(self, currentDatatime, result, circle_result):
-        currentDate = datetime.datetime.now().strftime("%Y-%m-%d")
-        conn = sqlite3.connect("/home/edit/ichia_ai_monitor/db/" + currentDate + ".db")
-        c = conn.cursor()
-        c.execute('''create table if not exists result(
-            id integer primary key autoincrement,
-            time text,
-            action1 text,
-            action2 text,
-            action3 text,
-            action4 text,
-            action5 text,
-            action6 text,
-            action7 text,
-            circleresult text
-        )
-        ''')
-        sqlstr = []
-        sqlstr.append(currentDatatime)
-        sqlstr.extend(result)
-        sqlstr.append(circle_result)
-        temp = tuple(sqlstr)
-        c.execute('insert into result values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)', temp)
-        conn.commit()
-        c.close()
-        conn.close()
+    def insert_into_db(self, start_time, end_time, result):
+        self._mutex.lock()
+        try:
+            current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+            conn = sqlite3.connect("db/" + current_date + ".db")
+            c = conn.cursor()
+            c.execute('''create table if not exists result(
+                id integer primary key autoincrement,
+                start time text,
+                end time text,
+                result text
+            )
+            ''')
+            sqlstr = []
+            sqlstr.append(start_time)
+            sqlstr.extend(end_time)
+            sqlstr.append(result)
+            temp = tuple(sqlstr)
+            c.execute('insert into result values (null, ?, ?, ?, ?)', temp)
+            conn.commit()
+            c.close()
+            conn.close()
+        finally:
+            self._mutex.unlock()
 
     def run(self):
         try:
             self.load_action()
             self.load_model()
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height)
+            self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height, current_time)
             self.loop_and_detect()
         finally:
             self.cam.release()
