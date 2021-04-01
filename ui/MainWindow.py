@@ -24,7 +24,7 @@ from utils.DetectTensorRT import DetectTensorRT
 from utils.GPIOThread import GPIOThread
 from utils.Rectangle import Rectangle
 from utils.SaveVideoThread import SaveVideoThread
-
+from ui.DataGrid import DataGrid
 """
 TO DO LIST
 """
@@ -53,6 +53,7 @@ class MainWindow(QMainWindow):
         self.logWidget = LogWidget()
         self.countWidget = CountWidget()
         self.statusBar = QStatusBar()
+
 
         self.config_path = config_path
         self.args = self.load_config()

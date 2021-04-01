@@ -7,6 +7,7 @@ from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtWidgets import QLabel, QWidget, QPushButton, QHBoxLayout, \
     QSplitter, QApplication
 
+from ui.DataGrid import DataGrid
 from ui.SystemSettingsTabWidget import SystemSettingsTabWidget
 
 """
@@ -31,7 +32,8 @@ class HeaderWidget(QWidget):
         self.settingsPushButton3 = QPushButton(objectName="settingsPushButton3")
         self.systemSettingsTabWidget = SystemSettingsTabWidget(config_path)
         self.restartPushButton = QPushButton("重启程式", objectName="restartPushButton")
-
+        self.queryDataPushButton = QPushButton("历史数据", objectName="queryDataPushButton")
+        self.dataGrid = DataGrid()
         self.timerRun = QTimer()
         self.timerError = QTimer()
         self.init_ui()
@@ -54,6 +56,7 @@ class HeaderWidget(QWidget):
 
         """slots"""
         self.settingsPushButton2.clicked.connect(self.systemSettingsTabWidget.show)
+        self.queryDataPushButton.clicked.connect(self.dataGrid.show)
 
         """layout"""
         layout = QHBoxLayout()
@@ -66,6 +69,7 @@ class HeaderWidget(QWidget):
         layout.addWidget(self.remoteServerStatusLabel)
         layout.addWidget(self.remoteServerLabel)
         layout.addWidget(self.settingsPushButton2)
+        layout.addWidget(self.queryDataPushButton)
         layout.addWidget(self.restartPushButton)
         self.setLayout(layout)
 

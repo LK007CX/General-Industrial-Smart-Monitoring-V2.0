@@ -2,19 +2,25 @@
 # -*- coding: UTF-8 -*-
 import cgitb
 import copy
-import sqlite3
 import datetime
 import os
+import sqlite3
 import sys
 import time
-from optparse import OptionParser
 
 import cv2
 import gi
+
+gi.require_version('Gst', '1.0')
+gi.require_version('GstRtspServer', '1.0')
+from gi.repository import Gst, GstRtspServer
+
 import numpy as np
 import pycuda.autoinit
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+
+from optparse import OptionParser
 
 from utils.ArgsHelper import ArgsHelper
 from utils.CircleQueue import CircleQueue
@@ -26,13 +32,9 @@ from utils.display import show_fps
 from utils.visualization import BBoxVisualization
 from utils.yolo_with_plugins import TrtYOLO
 
-gi.require_version('Gst', '1.0')
-gi.require_version('GstRtspServer', '1.0')
-from gi.repository import Gst, GstRtspServer
 from utils.Result import Result
 from utils.TimeItem import TimeItem
 import logging
-
 
 _width = '1280'
 _height = '720'
@@ -109,35 +111,37 @@ class DetectTensorRT(QThread):
     def __init__(self, args, parent=None):
         super(DetectTensorRT, self).__init__(parent)
         self.args = args
+
+        """for tensorrt_demos"""
         self.cam = None
         self.trt_yolo = None
         self.conf_th = args.thresh
         self.vis = None
 
+        """for Item"""
         self.item_list = args.item_list
         self.item_dict = {item.category: item for item in self.item_list}
-
         self.cls_dict = None
+
         self.gpio_flag = False
 
         self.enable_video_save = args.enable_video_save
         self.enable_remote_cv = args.enable_remote_cv
 
+        """for CircleQueue"""
         self.actionQueue = CircleQueue()
-
         self.current_action = None
         self.stop_action = None
-
         self.allow_close = False
 
+        """for Results"""
         self.draw_list = None
         self.results = None
-
-        self.enable_save_video = args.enable_video_save
 
         self.logger = logging.getLogger("utils.DetectTensorRT")
         # self.logger.info("create an instance from utils.DetectTensorRT")
 
+        """thread lock"""
         self._mutex = QMutex()
 
     def load_action(self):
@@ -176,17 +180,23 @@ class DetectTensorRT(QThread):
         self.cam = Camera(self.args)
         if not self.cam.isOpened():
             # raise SystemExit('ERROR: failed to open camera!')
+            self.logger.info("[Func] load_model - ERROR: failed to open camera, "
+                             "try to restart the application to connect the camera/.")
             self.release_and_restart()
         self.cls_dict = get_cls_dict(self.args.names_file)
         yolo_dim = self.args.yolo_dim.split('*')[-1]
         if 'x' in yolo_dim:
             dim_split = yolo_dim.split('x')
             if len(dim_split) != 2:
+                self.logger.info("[Func] load_model, ERROR: bad yolo_dim (%s), the application will be terminated.!"
+                                 % yolo_dim)
                 raise SystemExit('ERROR: bad yolo_dim (%s)!' % yolo_dim)
             w, h = int(dim_split[0]), int(dim_split[1])
         else:
             h = w = int(yolo_dim)
         if h % 32 != 0 or w % 32 != 0:
+            self.logger.info("[Func] load_model, ERROR: bad yolo_dim (%s), the application will be terminated.!"
+                             % yolo_dim)
             raise SystemExit('ERROR: bad yolo_dim (%s)!' % yolo_dim)
         self.trt_yolo = TrtYOLO(self.args.model_path, (h, w), self.args.category_num, cuda_ctx=pycuda.autoinit.context)
         self.vis = BBoxVisualization(self.cls_dict)
@@ -209,11 +219,8 @@ class DetectTensorRT(QThread):
         self.partial_result_Signal.emit(self.results)
 
     def start_work(self, save_string, width, height, current_time):
-        """reset the stop action."""
-        # self.stop_action.reset()
-        self.logger.info("[Func] start_work - after reset stop action - stop action: \n\t" + str(self.stop_action))
+        self.logger.info("[Func] start_work - Start of a work circle")
 
-        print("Start of a work circle.")
         """save circle video or not?"""
         if self.enable_video_save:
             self.start_save_task_signal.emit(save_string, width, height)
@@ -227,7 +234,6 @@ class DetectTensorRT(QThread):
         self.partial_result_Signal.emit(self.results)
 
     def end_work(self):
-
         self.allow_close = False
         """reset the CircleQueue"""
         for i in range(len(self.actionQueue)):
@@ -257,8 +263,7 @@ class DetectTensorRT(QThread):
             """GPIO output."""
             self.gpio_signal.emit()
 
-
-        # db
+        # database
         _ = "OK" if self.results.get_result() else "NG"
         self.insert_into_db(self.results.get_start_time(), self.results.get_end_time(), _)
 
@@ -267,19 +272,20 @@ class DetectTensorRT(QThread):
         self.logger.info("[Func] end_work - after reset results - results: \n\t" + str(self.results))
         """emit the signal to main ui."""
         self.partial_result_Signal.emit(self.results)
-        print("End of a work cycle.\n")
+        self.logger.info("[Func] end_work - End of a work cycle")
 
     def loop_and_detect(self):
         detect_labels = [item.category for item in self.item_list]  # all labels to be detected
         fps = 0.0
         tic = time.time()  # to calculate the fps
         while True:
+            # self.logger.info("[Func] loop_and_detect - Start a image detect circle")
             img = self.cam.read()
             if img is None:
                 break
 
             stop_flag = True  # to assert the timeout function can be carried out
-            # self.allow_close = False # just when the index of current action is above or equal 1, allow close can be True
+
             boxes, confs, clss = self.trt_yolo.detect(img, self.conf_th)  # model output results
 
             # filter labels
@@ -303,9 +309,7 @@ class DetectTensorRT(QThread):
                 box = modelOutputItem.box
                 conf = modelOutputItem.confidence
                 cls = modelOutputItem.cls
-
-                self.logger.info("[Func] loop_and_detect - --------------------------------------------------------\n"
-                                 "ModelOutputItem: \n" + str(modelOutputItem))
+                self.logger.info("[Func] loop_and_detect - ModelOutputItem: \n" + str(modelOutputItem))
 
                 """to calculate the relationship of the current output and the setting."""
                 rect = Rectangle((box[0], box[1]), (box[2], box[3]))
@@ -318,33 +322,29 @@ class DetectTensorRT(QThread):
                     self.history_Signal.emit(history_image, label, str(box), current_time)
                     # end time
                     if self.current_action.index == (len(self.actionQueue) - 2):
-                        self.logger.info("[Func] loop_and_detect - do end_work")
-                        self.logger.info("[Func] loop_and_detect - current ModelOutputItem: \n" + str(modelOutputItem))
+                        # self.logger.info("[Func] loop_and_detect - do end_work")
+                        # self.logger.info("[Func] loop_and_detect - current ModelOutputItem: \n" + str(modelOutputItem))
                         self.end_work()  # in func end_work, the CircleQueue will be reset correctly.
                     else:
                         # just rotate the action circle queue with one step
-                        self.logger.info("[Func] loop_and_detect - rotate the CircleQueue")
-                        self.logger.info("[Func] loop_and_detect - current ModelOutputItem: \n" + str(modelOutputItem))
+                        # self.logger.info("[Func] loop_and_detect - rotate the CircleQueue")
+                        # self.logger.info("[Func] loop_and_detect - current ModelOutputItem: \n" + str(modelOutputItem))
                         self.actionQueue.rotate()
 
                     # update current action
                     self.current_action = copy.deepcopy(self.actionQueue.first())
-                    self.logger.info("[Func] loop_and_detect - current action: \n" + str(self.current_action))
+                    # self.logger.info("[Func] loop_and_detect - current action: \n" + str(self.current_action))
 
                     if self.current_action.index == 0:
-                        self.logger.info("[Func] loop_and_detect - do start_work")
-                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height, current_time)
+                        # self.logger.info("[Func] loop_and_detect - do start_work")
+                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
+                                        current_time)
 
                     # allow close the circle
                     if self.current_action.index == 1:
-
                         self.allow_close = True
                         self.stop_action.reset()
-                        self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
-                    # do not allow close the circle
-                    # if self.current_action.index == (len(self.actionQueue) - 2):
-                    #     self.allow_close = False
-                    #     self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
+                        # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
 
                 stop_flag = False
                 if self.allow_close:
@@ -352,7 +352,7 @@ class DetectTensorRT(QThread):
                         self.logger.info("[Func] loop_and_detect - time out")
                         self.allow_close = False
 
-                        self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
+                        # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
 
                         history_image = self.vis.draw_bboxes(img, [box], [conf], [cls])
                         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -361,8 +361,8 @@ class DetectTensorRT(QThread):
                         for node in self.results:
                             if node.get_result() is None:
                                 node.set_result(False)
-                        self.logger.info(
-                            "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
+                        # self.logger.info(
+                        #     "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
                         self.logger.info("[Func] loop_and_detect - Time out - do end_work")
                         self.end_work()
 
@@ -370,21 +370,19 @@ class DetectTensorRT(QThread):
                 if self.allow_close:
                     if self.stop_action.allow_rotate(label, rect):
                         self.allow_close = False
-                        self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
+                        # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
                         history_image = self.vis.draw_bboxes(img, [box], [conf], [cls])
                         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         self.history_Signal.emit(history_image, "Timeout", "[None, None, None, None]", current_time)
-                        # set the remain node in the result
 
+                        # set the remain node in the result
                         for node in self.results:
                             if node.get_result() is None:
                                 node.set_result(False)
-                        self.logger.info(
-                            "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
+                        # self.logger.info(
+                        #     "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
                         self.logger.info("[Func] loop_and_detect - Time out - do end_work")
                         self.end_work()
-
-                        # print(self.results)
 
             img = self.vis.draw_bboxes(img, boxes, confs, clss)
 
@@ -405,7 +403,6 @@ class DetectTensorRT(QThread):
             # 计算fps数的指数衰减平均值
             fps = curr_fps if fps == 0.0 else (fps * 0.95 + curr_fps * 0.05)
             tic = toc
-            # time.sleep(0.005)
 
     def insert_into_db(self, start_time, end_time, result):
         print(start_time, end_time, result)
@@ -421,11 +418,11 @@ class DetectTensorRT(QThread):
                 result text
             )
             ''')
-            sqlstr = []
-            sqlstr.append(start_time)
-            sqlstr.append(end_time)
-            sqlstr.append(result)
-            temp = tuple(sqlstr)
+            sql_str = []
+            sql_str.append(start_time)
+            sql_str.append(end_time)
+            sql_str.append(result)
+            temp = tuple(sql_str)
             c.execute('insert into result values (null, ?, ?, ?)', temp)
             conn.commit()
             c.close()
