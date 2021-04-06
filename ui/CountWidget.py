@@ -35,13 +35,29 @@ class CountWidget(QWidget):
         self._init_ui()
 
     def _init_ui(self):
-        self._okLabel.setMinimumSize(QSize(100, 50))
-        self._ngLabel.setMinimumSize(QSize(100, 50))
-        self._percentLabel.setMinimumSize(QSize(100, 50))
-        self._totalLabel.setMinimumSize(QSize(100, 50))
+        fixed_width = 150
+        min_height = 75
+        max_height = 90
+        self._okLabel.setFixedWidth(fixed_width)
+        self._okLabel.setMinimumHeight(min_height)
+        self._okLabel.setMaximumHeight(max_height)
 
-        topLayout = QHBoxLayout()
-        bottomLayout = QHBoxLayout()
+        self._ngLabel.setFixedWidth(fixed_width)
+        self._ngLabel.setMinimumHeight(min_height)
+        self._ngLabel.setMaximumHeight(max_height)
+
+        self._percentLabel.setFixedWidth(fixed_width)
+        self._percentLabel.setMinimumHeight(min_height)
+        self._percentLabel.setMaximumHeight(max_height)
+
+        self._totalLabel.setFixedWidth(fixed_width)
+        self._totalLabel.setMinimumHeight(min_height)
+        self._totalLabel.setMaximumHeight(max_height)
+
+        topLayout = QHBoxLayout(spacing=2)
+        topLayout.setContentsMargins(0, 0, 0, 0)
+        bottomLayout = QHBoxLayout(spacing=2)
+        bottomLayout.setContentsMargins(0, 0, 0, 0)
         topLayout.addWidget(self._okLabel)
         topLayout.addWidget(self._ngLabel)
         bottomLayout.addWidget(self._totalLabel)
@@ -55,10 +71,10 @@ class CountWidget(QWidget):
         self.setStyleSheet(StyleSheet)
 
     def set_value(self, ok_num, ng_num, total_num, percent):
-        self._okLabel.set_val(ok_num)
-        self._ngLabel.set_val(ng_num)
-        self._totalLabel.set_val(total_num)
-        self._percentLabel.set_val(percent)
+        self._okLabel.set_val(str(ok_num))
+        self._ngLabel.set_val(str(ng_num))
+        self._totalLabel.set_val(str(total_num))
+        self._percentLabel.set_val(str(percent))
 
 
 if __name__ == '__main__':

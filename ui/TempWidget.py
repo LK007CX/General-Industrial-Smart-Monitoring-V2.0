@@ -6,7 +6,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QApplication
 
 
-class TempWidget(QWidget):
+class TempWidget(QLabel):
     def __init__(self, num, desc, color, *args, **kwargs):
         super(TempWidget, self).__init__(*args, **kwargs)
         self._numLabel = QLabel(num, objectName='numLabel')
@@ -28,7 +28,7 @@ class TempWidget(QWidget):
 
         # self.setAttribute(Qt.WA_StyledBackground)
         self.setObjectName("TempWidget")
-        StyleSheet = '''QWidget {background-color: ''' + str(self._color) + ''';}'''
+        StyleSheet = '''QLabel {background-color: ''' + str(self._color) + '''; border-radius: 15px;}'''
         self.setStyleSheet(StyleSheet)
 
     def set_val(self, val):

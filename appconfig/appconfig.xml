@@ -19,7 +19,7 @@
 	<output>
 		<enable>1</enable>
 		<mode>low</mode>
-		<time>1.0</time>
+		<time>0.2</time>
 		<pin>18</pin>
 	</output>
 	<video>
@@ -43,7 +43,7 @@
 			<index>1</index>
 			<category>mouse</category>
 			<frames>1</frames>
-			<time>0.30000000000000004</time>
+			<time>0.3</time>
 			<thresh>0.3</thresh>
 			<coordinate>254,413,1147,617</coordinate>
 		</item>

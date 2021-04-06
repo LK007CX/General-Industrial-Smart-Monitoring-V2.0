@@ -107,6 +107,7 @@ class DetectTensorRT(QThread):
     start_save_task_signal = pyqtSignal(str, int, int)
     end_save_task_signal = pyqtSignal(bool, bool)
     write_frame_to_video_writer_signal = pyqtSignal(np.ndarray)
+    num_signal = pyqtSignal(int, int, int, float)
 
     def __init__(self, args, parent=None):
         super(DetectTensorRT, self).__init__(parent)
@@ -144,6 +145,9 @@ class DetectTensorRT(QThread):
         """thread lock"""
         self._mutex = QMutex()
 
+        self.ok_num = 0
+        self.ng_num = 0
+
     def load_action(self):
         """enqueue the action to the CircleQueue"""
         for action in self.args.item_list:
@@ -151,26 +155,26 @@ class DetectTensorRT(QThread):
 
         """current action"""
         self.current_action = copy.deepcopy(self.actionQueue.first())
-        self.logger.info("[Func] load_action - current action: \n\t" + str(self.current_action))
+        self.logger.info("[Func] load_action - current action: \t" + str(self.current_action))
 
         """time action, play the role of time delay."""
         length = len(self.actionQueue)
         time_action = TimeItem(self.args.time_delay, length)
         self.actionQueue.enqueue(time_action)
-        self.logger.info("[Func] load_action - time action: \n\t" + str(time_action))
+        self.logger.info("[Func] load_action - time action: \t" + str(time_action))
 
         """rotate the CircleQueue, to reach the last element of the CircleQueue, to get the stop action."""
         for _ in range(len(self.actionQueue) - 1):
             self.actionQueue.rotate()
         """stop action"""
         self.stop_action = copy.deepcopy(self.actionQueue.first())
-        self.logger.info("[Func] load_action - stop action: \n\t" + str(self.stop_action))
+        self.logger.info("[Func] load_action - stop action: \t" + str(self.stop_action))
 
         """first action"""
         self.actionQueue.rotate()
         """represent the result of each circle."""
         self.results = Result(len(self.actionQueue) - 1)
-        self.logger.info("[Func] load_action - results: \n\t" + str(self.results))
+        self.logger.info("[Func] load_action - results: \t" + str(self.results))
 
     def load_model(self):
         if self.args.category_num <= 0:
@@ -225,10 +229,13 @@ class DetectTensorRT(QThread):
         if self.enable_video_save:
             self.start_save_task_signal.emit(save_string, width, height)
 
-        """reset the results."""
+        """reset the results(nodes and start time, end time)"""
         self.results.reset_result()
+        """new start time"""
         self.results.set_start_time(current_time)
-        self.logger.info("[Func] start_work - after reset results - results: \n\t" + str(self.results))
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+        print(self.results.get_start_time())
+        self.logger.info("[Func] start_work - after reset results - results: \t" + str(self.results))
 
         """emit the signal to main ui."""
         self.partial_result_Signal.emit(self.results)
@@ -244,18 +251,31 @@ class DetectTensorRT(QThread):
                 break
         """reset the stop action."""
         self.stop_action.reset()
-        self.logger.info("[Func] end_work - after reset stop action - stop action: \n\t" + str(self.stop_action))
+        self.logger.info("[Func] end_work - after reset stop action - stop action: \t" + str(self.stop_action))
 
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         self.results.set_end_time(current_time)
+
+        # database
+        start_time = self.results.get_start_time()
+        end_time = self.results.get_end_time()
+        _ = "OK" if self.results.get_result() else "NG"
+        self.insert_into_db(start_time, end_time, _)
+
         """if the result of the circle is OK or NG?"""
         if self.results.get_result():
+            self.ok_num += 1
+            self.num_signal.emit(self.ok_num, self.ng_num, self.ok_num + self.ng_num,
+                                 round(self.ok_num / (self.ok_num + self.ng_num), 2))
             self.log_Signal.emit(current_time, "OK")
             """save circle video."""
             if self.enable_video_save:
                 self.end_save_task_signal.emit(True, self.args.only_save_ng_video)
         else:
+            self.ng_num += 1
+            self.num_signal.emit(self.ok_num, self.ng_num, self.ok_num + self.ng_num,
+                                 round(self.ok_num / (self.ok_num + self.ng_num), 2))
             self.log_Signal.emit(current_time, "NG")
             """do not save the video."""
             if not self.enable_video_save:
@@ -263,13 +283,9 @@ class DetectTensorRT(QThread):
             """GPIO output."""
             self.gpio_signal.emit()
 
-        # database
-        _ = "OK" if self.results.get_result() else "NG"
-        self.insert_into_db(self.results.get_start_time(), self.results.get_end_time(), _)
-
         """reset the results."""
         self.results.reset_result()
-        self.logger.info("[Func] end_work - after reset results - results: \n\t" + str(self.results))
+        self.logger.info("[Func] end_work - after reset results - results: \t" + str(self.results))
         """emit the signal to main ui."""
         self.partial_result_Signal.emit(self.results)
         self.logger.info("[Func] end_work - End of a work cycle")
@@ -309,7 +325,7 @@ class DetectTensorRT(QThread):
                 box = modelOutputItem.box
                 conf = modelOutputItem.confidence
                 cls = modelOutputItem.cls
-                self.logger.info("[Func] loop_and_detect - ModelOutputItem: \n" + str(modelOutputItem))
+                ####################### self.logger.info("[Func] loop_and_detect - ModelOutputItem: \t" + str(modelOutputItem))
 
                 """to calculate the relationship of the current output and the setting."""
                 rect = Rectangle((box[0], box[1]), (box[2], box[3]))
@@ -335,6 +351,7 @@ class DetectTensorRT(QThread):
                     self.current_action = copy.deepcopy(self.actionQueue.first())
                     # self.logger.info("[Func] loop_and_detect - current action: \n" + str(self.current_action))
 
+                    # time.sleep(0.5)
                     if self.current_action.index == 0:
                         # self.logger.info("[Func] loop_and_detect - do start_work")
                         self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
@@ -365,6 +382,9 @@ class DetectTensorRT(QThread):
                         #     "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
                         self.logger.info("[Func] loop_and_detect - Time out - do end_work")
                         self.end_work()
+                        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
+                                        current_time)
 
             if stop_flag:
                 if self.allow_close:
@@ -383,6 +403,9 @@ class DetectTensorRT(QThread):
                         #     "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
                         self.logger.info("[Func] loop_and_detect - Time out - do end_work")
                         self.end_work()
+                        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
+                                        current_time)
 
             img = self.vis.draw_bboxes(img, boxes, confs, clss)
 
@@ -405,7 +428,9 @@ class DetectTensorRT(QThread):
             tic = toc
 
     def insert_into_db(self, start_time, end_time, result):
+        print("*************************")
         print(start_time, end_time, result)
+        print(type(start_time), type(end_time), type(result))
         self._mutex.lock()
         try:
             current_date = datetime.datetime.now().strftime("%Y-%m-%d")

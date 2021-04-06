@@ -298,6 +298,7 @@ class MainWindow(QMainWindow):
             self.thread.end_save_task_signal.connect(self.saveVideoThread.end_save_task)
             self.thread.write_frame_to_video_writer_signal.connect(self.saveVideoThread.write_frame_to_video_writer)
             self.thread.gpio_signal.connect(self.gpio_thread.custom_output)
+            self.thread.num_signal.connect(self.countWidget.set_value)
             self.thread.start()
             self.deleteFileThread.start()
         except Exception as e:
