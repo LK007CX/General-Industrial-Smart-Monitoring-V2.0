@@ -1,4 +1,5 @@
 import cv2
+
 import numpy as np
 
 # 图片的分辨率为200*300，这里b, g, r设为随机值，注意dtype属性

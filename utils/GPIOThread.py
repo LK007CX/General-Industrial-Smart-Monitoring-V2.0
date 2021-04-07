@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-import sys
-import time
-from PyQt5.QtCore import QThread
 import datetime
+import sys
 import threading
+import time
+
+from PyQt5.QtCore import QThread
+
 sys.path.append('/opt/nvidia/jetson-gpio/lib/python/')
 sys.path.append('/opt/nvidia/jetson-gpio/lib/python/Jetson/GPIO')
 import Jetson.GPIO as GPIO

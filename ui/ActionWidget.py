@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+import cv2
 import sys
 
-import cv2
 from PyQt5.QtCore import pyqtSignal, QSize, Qt
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QWidget, QListWidgetItem, QComboBox, QDoubleSpinBox, \

@@ -7,19 +7,27 @@ from utils.Item import Item
 
 class ActionItem(Item):
     __slots__ = 'index', 'category', 'confirm_frames', 'confirm_time', 'thresh', \
-                'label_list', 'time_list', 'coordinate', 'done'
+                '_label_list', '_time_list', 'coordinate', '_done'
 
     def __init__(self, *args, **kwargs):
         for k, v in kwargs.items():
             setattr(self, k, v)
-            self.label_list = []
-            self.time_list = []
-            self.done = False
+            self._label_list = []
+            self._time_list = []
+            self._done = False
 
     def reset(self):
-        self.label_list = []
-        self.time_list = []
-        self.done = False
+        self._label_list = []
+        self._time_list = []
+        self._done = False
+
+    def get_time(self):
+        if len(self._time_list) == 0:
+            return 0
+        elif len(self._time_list) == 1:
+            return 1
+        else:
+            return self._time_list[-1] - self._time_list[0]
 
     def allow_rotate(self, label, rect):
         """
@@ -31,23 +39,23 @@ class ActionItem(Item):
         if not self.intersect(rect, self.coordinate):
             # print("不在ROI区域")
             return False
-        if (len(self.label_list) == self.confirm_frames) and (self.done != True):
+        if (len(self._label_list) == self.confirm_frames) and (self._done != True):
             if self.confirm_time == 0:
-                self.done = True
+                self._done = True
                 print("Action " + "Index: " + str(self.index) + " Label: " + str(self.category) + ", has been done.")
                 return True
             if self.confirm_frames == 1:
-                self.done = True
+                self._done = True
                 print("Action " + "Index: " + str(self.index) + " Label: " + str(self.category) + ", has been done.")
                 return True
-            if (len(self.time_list) > 1) and (self.time_list[-1] - self.time_list[0]).seconds > self.confirm_time:
-                self.done = True
+            if (len(self._time_list) > 1) and (self._time_list[-1] - self._time_list[0]).seconds > self.confirm_time:
+                self._done = True
                 print("Action " + "Index: " + str(self.index) + " Label: " + str(self.category) + ", has been done.")
                 return True
         if label == self.category:
-            if len(self.label_list) < self.confirm_frames:
-                self.label_list.append(label)
-            self.time_list.append(datetime.now())
+            if len(self._label_list) < self.confirm_frames:
+                self._label_list.append(label)
+            self._time_list.append(datetime.now())
         return False
 
     def intersect(self, box1, box2):
@@ -67,5 +75,5 @@ class ActionItem(Item):
             return False
 
     def __str__(self):
-        return "[ActionItem] index:{}--category:{}--confirm frames:{}--confirm time:{}--thresh:{}".\
-                 format(self.index, self.category, self.confirm_frames, self.confirm_time, self.thresh)
+        return "[ActionItem] index:{}--category:{}--confirm frames:{}--confirm time:{}--thresh:{}". \
+            format(self.index, self.category, self.confirm_frames, self.confirm_time, self.thresh)

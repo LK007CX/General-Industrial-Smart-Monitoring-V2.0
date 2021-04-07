@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+import cv2
 import os
 
-import cv2
 from PyQt5.QtCore import QThread
 
 """

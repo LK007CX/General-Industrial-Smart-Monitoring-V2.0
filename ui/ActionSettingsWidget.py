@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+import cv2
 import sys
 import xml.etree.ElementTree as ET
 
-import cv2
 from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtWidgets import QWidget, QListWidget, QPushButton, QVBoxLayout, \
     QHBoxLayout, QListWidgetItem, QApplication, QAbstractItemView, QFileDialog, QLabel

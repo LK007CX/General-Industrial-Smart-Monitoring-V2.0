@@ -4,6 +4,7 @@ Created on 2018-8-25 20:07:44
 @author: skyblue
 '''
 import cv2
+
 import numpy as np
 
 # -----------------------鼠标操作相关------------------------------------------
@@ -32,9 +33,9 @@ def on_mouse(event, x, y, flags, param):
         # if (pointsCount == pointsMax + 1):
         #     pointsCount = 0
         #     tpPointsChoose = []
-        print('pointsCount:', pointsCount)
-        point1 = (x, y)
-        print(x, y)
+        # print('pointsCount:', pointsCount)
+        # point1 = (x, y)
+        # print(x, y)
         # 画出点击的点
         cv2.circle(img2, point1, 10, (0, 255, 0), 2)
 

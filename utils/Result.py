@@ -2,8 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 from utils.ResultNode import ResultNode
-
-
 class Result:
 
     def __init__(self, length):
@@ -19,23 +17,28 @@ class Result:
         return self._result_list[k]
 
     def __str__(self):
-        string = []
+        string = "[Result] ["
         for i in range(len(self)):
             node = self._result_list[i]
-            string.append(str(node))
+            string += str(node)
+        string += "]"
         return str(string)
 
     def init(self, length):
         for i in range(length):
-            node = ResultNode(i, None)
+            node = ResultNode(i, None, None, None)
             self._result_list[i] = node
 
-    def set_node_result(self, index, result):
+    def set_node_result(self, index, result, time, label):
         self._result_list[index].set_result(result)
+        self._result_list[index].set_time(time)
+        self._result_list[index].set_label(label)
 
     def reset_result(self):
         for i in range(len(self)):
             self._result_list[i].set_result(None)
+            self._result_list[i].set_time(None)
+            self._result_list[i].set_label(None)
         self._start_time = None
         self._end_time = None
 

@@ -49,7 +49,7 @@ class DeleteFileThread(QThread):
                 if not os.path.exists(file_name):
                     break
                 os.remove(file_name)
-            print("已删除" + str(len(delete_list)) + "张图片")
+            print("已删除" + str(len(delete_list)) + " video")
         except Exception as e:
             print(e)
 

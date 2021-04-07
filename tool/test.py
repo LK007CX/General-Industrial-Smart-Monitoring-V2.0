@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 
 
 def fun():
-    print("ff")
+    print("")
 
 
 if __name__ == '__main__':

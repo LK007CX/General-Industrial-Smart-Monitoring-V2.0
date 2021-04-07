@@ -2,13 +2,13 @@
 # -*- coding: UTF-8 -*-
 import cgitb
 import copy
+import cv2
 import datetime
 import os
 import sqlite3
 import sys
 import time
 
-import cv2
 import gi
 
 gi.require_version('Gst', '1.0')
@@ -133,7 +133,9 @@ class DetectTensorRT(QThread):
         self.actionQueue = CircleQueue()
         self.current_action = None
         self.stop_action = None
+        self.time_delay = None
         self.allow_close = False
+        self.allow_time_dalay = False
 
         """for Results"""
         self.draw_list = None
@@ -164,13 +166,17 @@ class DetectTensorRT(QThread):
         self.logger.info("[Func] load_action - time action: \t" + str(time_action))
 
         """rotate the CircleQueue, to reach the last element of the CircleQueue, to get the stop action."""
-        for _ in range(len(self.actionQueue) - 1):
+        for _ in range(len(self.actionQueue) - 2):
             self.actionQueue.rotate()
         """stop action"""
         self.stop_action = copy.deepcopy(self.actionQueue.first())
         self.logger.info("[Func] load_action - stop action: \t" + str(self.stop_action))
 
-        """first action"""
+        """time daley action"""
+        self.actionQueue.rotate()
+        self.time_delay = copy.deepcopy(self.actionQueue.first())
+        self.logger.info("[Func] load_action - time delay: \t" + str(self.time_delay))
+        """return the head of the CircleQueue"""
         self.actionQueue.rotate()
         """represent the result of each circle."""
         self.results = Result(len(self.actionQueue) - 1)
@@ -217,12 +223,13 @@ class DetectTensorRT(QThread):
 
         restart(str(options.twice + 1))
 
-    def partial_result(self, index, result):
-        self.results.set_node_result(index, result)
+    def partial_result(self, index, result, time, label):
+        self.results.set_node_result(index, result, time, label)
         """emit a signal that will display the state of partial result."""
         self.partial_result_Signal.emit(self.results)
 
     def start_work(self, save_string, width, height, current_time):
+        self.logger.info("******************************************************************************************")
         self.logger.info("[Func] start_work - Start of a work circle")
 
         """save circle video or not?"""
@@ -233,15 +240,15 @@ class DetectTensorRT(QThread):
         self.results.reset_result()
         """new start time"""
         self.results.set_start_time(current_time)
-        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
-        print(self.results.get_start_time())
-        self.logger.info("[Func] start_work - after reset results - results: \t" + str(self.results))
+        # print(self.results.get_start_time())
+        # self.logger.info("[Func] start_work - after reset results - results: \t" + str(self.results))
 
         """emit the signal to main ui."""
         self.partial_result_Signal.emit(self.results)
 
     def end_work(self):
         self.allow_close = False
+        self.allow_time_dalay = False
         """reset the CircleQueue"""
         for i in range(len(self.actionQueue)):
             self.actionQueue.rotate()
@@ -250,8 +257,10 @@ class DetectTensorRT(QThread):
                 self.current_action = copy.deepcopy(self.actionQueue.first())
                 break
         """reset the stop action."""
+        self.time_delay.reset()
         self.stop_action.reset()
-        self.logger.info("[Func] end_work - after reset stop action - stop action: \t" + str(self.stop_action))
+        # self.logger.info("[Func] end_work - after reset stop action - stop action: \t" + str(self.stop_action))
+        # self.logger.info("[Func] end_work - after reset stop action - time delay: \t" + str(self.time_delay))
 
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -282,10 +291,10 @@ class DetectTensorRT(QThread):
                 self.end_save_task_signal.emit(False, self.args.only_save_ng_video)
             """GPIO output."""
             self.gpio_signal.emit()
-
+        self.logger.info("[Func] end_work - Results: \t" + str(self.results))
         """reset the results."""
         self.results.reset_result()
-        self.logger.info("[Func] end_work - after reset results - results: \t" + str(self.results))
+        # self.logger.info("[Func] end_work - after reset results - results: \t" + str(self.results))
         """emit the signal to main ui."""
         self.partial_result_Signal.emit(self.results)
         self.logger.info("[Func] end_work - End of a work cycle")
@@ -331,7 +340,8 @@ class DetectTensorRT(QThread):
                 rect = Rectangle((box[0], box[1]), (box[2], box[3]))
 
                 if self.current_action.allow_rotate(label, rect):
-                    self.partial_result(self.current_action.index, True)
+                    self.partial_result(self.current_action.index, True, self.current_action.get_time(),
+                                        self.current_action.category)
                     """emit history image to main window"""
                     history_image = self.vis.draw_bboxes(img, [box], [conf], [cls])
                     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -360,14 +370,41 @@ class DetectTensorRT(QThread):
                     # allow close the circle
                     if self.current_action.index == 1:
                         self.allow_close = True
+                        self.allow_time_dalay = True
                         self.stop_action.reset()
+                        self.time_delay.reset()
                         # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
+
+                    if self.current_action.index == len(self.actionQueue) - 2:
+                        self.allow_close = False
+                        self.stop_action.reset()
 
                 stop_flag = False
                 if self.allow_close:
                     if self.stop_action.allow_rotate(label, rect):
-                        self.logger.info("[Func] loop_and_detect - time out")
-                        self.allow_close = False
+
+                        # self.allow_close = False
+
+                        # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
+
+                        history_image = self.vis.draw_bboxes(img, [box], [conf], [cls])
+                        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        self.history_Signal.emit(history_image, "End early", "[None, None, None, None]", current_time)
+
+                        for node in self.results:
+                            if node.get_result() is None:
+                                node.set_result(False)
+                        # self.logger.info(
+                        #     "[Func] loop_and_detect - reset the remain node in results: \n" + str(self.results))
+                        self.logger.info("[Func] loop_and_detect - End early - do end_work")
+                        self.end_work()
+                        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
+                                        current_time)
+                if self.allow_time_dalay:
+                    if self.time_delay.allow_rotate(label, rect):
+
+                        # self.allow_close = False
 
                         # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
 
@@ -387,9 +424,9 @@ class DetectTensorRT(QThread):
                                         current_time)
 
             if stop_flag:
-                if self.allow_close:
-                    if self.stop_action.allow_rotate(label, rect):
-                        self.allow_close = False
+                if self.allow_time_dalay:
+                    if self.time_delay.allow_rotate(label, rect):
+                        # self.allow_close = False
                         # self.logger.info("[Func] loop_and_detect - change allow_close to: " + str(self.allow_close))
                         history_image = self.vis.draw_bboxes(img, [box], [conf], [cls])
                         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -428,9 +465,6 @@ class DetectTensorRT(QThread):
             tic = toc
 
     def insert_into_db(self, start_time, end_time, result):
-        print("*************************")
-        print(start_time, end_time, result)
-        print(type(start_time), type(end_time), type(result))
         self._mutex.lock()
         try:
             current_date = datetime.datetime.now().strftime("%Y-%m-%d")

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys
 
-from PyQt5.QtCore import Qt, QSize
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QApplication
 
 from ui.TempWidget import TempWidget

@@ -1,10 +1,10 @@
 import base64
+import cv2
 import datetime
 import sys
 import time
 from collections import namedtuple
 
-import cv2
 import numpy as np
 import requests
 

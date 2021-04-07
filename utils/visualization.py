@@ -4,8 +4,8 @@ The BBoxVisualization class implements drawing of nice looking
 bounding boxes based on object detection results.
 """
 import copy
-
 import cv2
+
 import numpy as np
 
 # Constants

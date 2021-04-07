@@ -1,6 +1,8 @@
-import yaml
 import logging.config
 import os
+
+import yaml
+
 """
 Load config file by YAML, and config the logging module by logging.dictConfig.
 """

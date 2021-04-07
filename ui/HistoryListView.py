@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+import cv2
 import sys
 import time
 from collections import deque
 
-import cv2
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QColor
 from PyQt5.QtWidgets import QWidget, QListView, QVBoxLayout, QApplication

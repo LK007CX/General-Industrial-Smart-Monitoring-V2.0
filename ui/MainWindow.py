@@ -24,7 +24,7 @@ from utils.DetectTensorRT import DetectTensorRT
 from utils.GPIOThread import GPIOThread
 from utils.Rectangle import Rectangle
 from utils.SaveVideoThread import SaveVideoThread
-from ui.DataGrid import DataGrid
+
 """
 TO DO LIST
 """
@@ -53,7 +53,6 @@ class MainWindow(QMainWindow):
         self.logWidget = LogWidget()
         self.countWidget = CountWidget()
         self.statusBar = QStatusBar()
-
 
         self.config_path = config_path
         self.args = self.load_config()
@@ -160,9 +159,9 @@ class MainWindow(QMainWindow):
             model_input_size = root.find('model').find('size').text
             names_file = root.find('model').find('labelsfile').text
             thresh = float(root.find('model').find('thresh').text)
-            print("================================")
-            print(thresh)
-            print(type(thresh))
+            # print("================================")
+            # print(thresh)
+            # print(type(thresh))
             category_num = int(root.find('model').find('category_num').text)
 
             camera_mode = root.find('camera').find('mode').text

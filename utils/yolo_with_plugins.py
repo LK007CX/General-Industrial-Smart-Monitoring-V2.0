@@ -6,11 +6,11 @@ Implementation of TrtYOLO class with the yolo_layer plugins.
 from __future__ import print_function
 
 import ctypes
-
 import cv2
+import tensorrt as trt
+
 import numpy as np
 import pycuda.driver as cuda
-import tensorrt as trt
 
 try:
     ctypes.cdll.LoadLibrary('./plugins/libyolo_layer.so')

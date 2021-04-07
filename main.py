@@ -20,7 +20,6 @@ from gi.repository import GObject, Gst
 from log_unit.app_logger import setup_logging
 import logging
 
-
 if __name__ == "__main__":
     """logging"""
     setup_logging(default_path="appconfig/logging.yaml")

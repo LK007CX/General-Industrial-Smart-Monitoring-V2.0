@@ -6,11 +6,11 @@ addition, this Camera class is further extended to take a video
 file or an image file as input.
 """
 
+import cv2
 import logging
 import subprocess
 import threading
 
-import cv2
 import numpy as np
 
 # The following flag ise used to control whether to use a GStreamer

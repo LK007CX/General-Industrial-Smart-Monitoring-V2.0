@@ -3,7 +3,7 @@
 import sys
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QApplication
+from PyQt5.QtWidgets import QLabel, QVBoxLayout, QApplication
 
 
 class TempWidget(QLabel):

@@ -11,4 +11,5 @@ class ModelOutputItem:
         self.label = self.cls_dict[self.cls]
 
     def __str__(self):
-        return '[ModelOutputItem] box:{}--confidence:{}--cls:{}--label:{}'.format(self.box, self.confidence, self.cls, self.label)
+        return '[ModelOutputItem] box:{}--confidence:{}--cls:{}--label:{}'.format(self.box, self.confidence, self.cls,
+                                                                                  self.label)
