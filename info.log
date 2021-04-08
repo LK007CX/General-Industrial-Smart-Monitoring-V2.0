@@ -7,3 +7,163 @@
 2021-04-07 17:11:51,560 - root - INFO - Camera: using USB webcam /dev/video0
 2021-04-07 17:12:01,637 - utils.DetectTensorRT - INFO - ******************************************************************************************
 2021-04-07 17:12:01,637 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:04:35,073 - root - INFO - The application is starting...
+2021-04-08 10:04:36,549 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:04:36,551 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617847476.55111
+2021-04-08 10:04:36,554 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:tvmonitor--confirm frames:1--confirm time:0.2--thresh:0.3
+2021-04-08 10:04:36,555 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617847476.55111
+2021-04-08 10:04:36,557 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:04:36,558 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:04:54,815 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:04:54,815 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:05:47,339 - root - INFO - The application is starting...
+2021-04-08 10:05:48,216 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:05:48,217 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617847548.2173843
+2021-04-08 10:05:48,218 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:05:48,218 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617847548.2173843
+2021-04-08 10:05:48,219 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:05:48,220 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:05:57,501 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:05:57,502 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:06:22,236 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-04-08 10:06:22,280 - utils.DetectTensorRT - INFO - [Func] end_work - Results: 	[Result] [[ResultNode] index:0--label:person--result:True--time:1 [ResultNode] index:1--label:tvmonitor--result:True--time:1 [ResultNode] index:2--label:None--result:False--time:None ]
+2021-04-08 10:06:22,281 - utils.DetectTensorRT - INFO - [Func] end_work - End of a work cycle
+2021-04-08 10:06:22,282 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:06:22,282 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:09:22,751 - root - INFO - The application is starting...
+2021-04-08 10:09:23,517 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:09:23,518 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617847763.5184062
+2021-04-08 10:09:23,519 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:09:23,520 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617847763.5184062
+2021-04-08 10:09:23,520 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:09:23,521 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:09:32,113 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:09:32,114 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:11:30,357 - root - INFO - The application is starting...
+2021-04-08 10:11:31,085 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:11:31,086 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617847891.086875
+2021-04-08 10:11:31,088 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:11:31,088 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617847891.086875
+2021-04-08 10:11:31,089 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:11:31,090 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:11:39,328 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:11:39,332 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:12:37,389 - root - INFO - The application is starting...
+2021-04-08 10:12:38,543 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:12:38,544 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617847958.544897
+2021-04-08 10:12:38,545 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:12:38,546 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617847958.544897
+2021-04-08 10:12:38,546 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:12:38,547 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:12:48,271 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:12:48,272 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:25:07,512 - root - INFO - The application is starting...
+2021-04-08 10:25:08,726 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:25:08,727 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617848708.727529
+2021-04-08 10:25:08,728 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:25:08,729 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617848708.727529
+2021-04-08 10:25:08,729 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:25:08,730 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:25:22,588 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:25:22,589 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:26:15,726 - root - INFO - The application is starting...
+2021-04-08 10:26:16,543 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:26:16,544 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617848776.5446856
+2021-04-08 10:26:16,545 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:26:16,546 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617848776.5446856
+2021-04-08 10:26:16,546 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:26:16,547 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:26:26,759 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:26:26,760 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:29:31,398 - root - INFO - The application is starting...
+2021-04-08 10:29:32,253 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:29:32,255 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617848972.2549114
+2021-04-08 10:29:32,256 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:29:32,256 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617848972.2549114
+2021-04-08 10:29:32,257 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:29:32,258 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:29:41,112 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:29:41,113 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:31:45,788 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-04-08 10:31:45,816 - utils.DetectTensorRT - INFO - [Func] end_work - Results: 	[Result] [[ResultNode] index:0--label:person--result:True--time:1 [ResultNode] index:1--label:None--result:False--time:None [ResultNode] index:2--label:None--result:False--time:None ]
+2021-04-08 10:31:45,817 - utils.DetectTensorRT - INFO - [Func] end_work - End of a work cycle
+2021-04-08 10:31:45,819 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:31:45,821 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:32:53,816 - root - INFO - The application is starting...
+2021-04-08 10:32:54,585 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:32:54,586 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617849174.5864031
+2021-04-08 10:32:54,587 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:32:54,588 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617849174.5864031
+2021-04-08 10:32:54,589 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:32:54,589 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 10:33:03,547 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:33:03,548 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:35:57,594 - utils.DetectTensorRT - INFO - [Func] end_work - Results: 	[Result] [[ResultNode] index:0--label:person--result:True--time:1 [ResultNode] index:1--label:tvmonitor--result:True--time:1 [ResultNode] index:2--label:mouse--result:True--time:1 ]
+2021-04-08 10:35:57,601 - utils.DetectTensorRT - INFO - [Func] end_work - End of a work cycle
+2021-04-08 10:35:57,602 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:35:57,603 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:36:21,355 - utils.DetectTensorRT - INFO - [Func] end_work - Results: 	[Result] [[ResultNode] index:0--label:person--result:True--time:1 [ResultNode] index:1--label:tvmonitor--result:True--time:1 [ResultNode] index:2--label:mouse--result:True--time:1 ]
+2021-04-08 10:36:21,356 - utils.DetectTensorRT - INFO - [Func] end_work - End of a work cycle
+2021-04-08 10:36:21,357 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:36:21,357 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:36:26,968 - utils.DetectTensorRT - INFO - [Func] end_work - Results: 	[Result] [[ResultNode] index:0--label:person--result:True--time:1 [ResultNode] index:1--label:tvmonitor--result:True--time:1 [ResultNode] index:2--label:mouse--result:True--time:1 ]
+2021-04-08 10:36:26,969 - utils.DetectTensorRT - INFO - [Func] end_work - End of a work cycle
+2021-04-08 10:36:26,970 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:36:26,971 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:36:51,393 - utils.DetectTensorRT - INFO - [Func] loop_and_detect - Time out - do end_work
+2021-04-08 10:36:51,428 - utils.DetectTensorRT - INFO - [Func] end_work - Results: 	[Result] [[ResultNode] index:0--label:person--result:True--time:1 [ResultNode] index:1--label:tvmonitor--result:True--time:1 [ResultNode] index:2--label:None--result:False--time:None ]
+2021-04-08 10:36:51,429 - utils.DetectTensorRT - INFO - [Func] end_work - End of a work cycle
+2021-04-08 10:36:51,430 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 10:36:51,431 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 10:57:44,400 - root - INFO - The application is starting...
+2021-04-08 10:57:45,246 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:57:45,254 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617850665.2542481
+2021-04-08 10:57:45,255 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 10:57:45,256 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617850665.2542481
+2021-04-08 10:57:45,257 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 10:57:45,258 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 11:05:00,964 - root - INFO - The application is starting...
+2021-04-08 11:05:02,652 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:05:02,653 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617851102.653118
+2021-04-08 11:05:02,654 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:05:02,654 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617851102.653118
+2021-04-08 11:05:02,655 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 11:05:02,656 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 11:05:16,191 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 11:05:16,192 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 11:06:01,144 - root - INFO - The application is starting...
+2021-04-08 11:06:01,861 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:06:01,862 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617851161.8619561
+2021-04-08 11:06:01,862 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:06:01,864 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617851161.8619561
+2021-04-08 11:06:01,864 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 11:06:01,865 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 11:06:11,230 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 11:06:11,230 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 11:08:50,529 - root - INFO - The application is starting...
+2021-04-08 11:08:51,284 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:08:51,286 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617851331.285865
+2021-04-08 11:08:51,287 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:08:51,288 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617851331.285865
+2021-04-08 11:08:51,288 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 11:08:51,289 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 11:08:59,994 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 11:08:59,995 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 11:10:53,673 - root - INFO - The application is starting...
+2021-04-08 11:10:54,456 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:10:54,463 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617851454.4630015
+2021-04-08 11:10:54,464 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:10:54,465 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617851454.4630015
+2021-04-08 11:10:54,465 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 11:10:54,466 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 11:11:05,288 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 11:11:05,293 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
+2021-04-08 11:30:31,871 - root - INFO - The application is starting...
+2021-04-08 11:30:32,783 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:person--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:30:32,784 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:20--start time:1617852632.7843518
+2021-04-08 11:30:32,785 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:2--category:mouse--confirm frames:1--confirm time:0.3--thresh:0.3
+2021-04-08 11:30:32,785 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:20--start time:1617852632.7843518
+2021-04-08 11:30:32,786 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None ]
+2021-04-08 11:30:32,786 - root - INFO - Camera: using USB webcam /dev/video0
+2021-04-08 11:30:42,465 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-04-08 11:30:42,465 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle

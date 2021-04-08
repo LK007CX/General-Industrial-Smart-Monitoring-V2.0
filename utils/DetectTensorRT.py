@@ -303,6 +303,9 @@ class DetectTensorRT(QThread):
         detect_labels = [item.category for item in self.item_list]  # all labels to be detected
         fps = 0.0
         tic = time.time()  # to calculate the fps
+        img = self.cam.read()
+        if img is not None:
+            cv2.imwrite("icon/template.jpg", img)
         while True:
             # self.logger.info("[Func] loop_and_detect - Start a image detect circle")
             img = self.cam.read()
