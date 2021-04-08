@@ -32,7 +32,8 @@ class CircleQueue:
         Raise Empty exception if the queue is empty.
         """
         if self.is_empty():
-            raise Empty('Queue is empty.')
+            # raise Empty('Queue is empty.')
+            return None
         head = self._tail._next
         return head._element
 
@@ -41,7 +42,8 @@ class CircleQueue:
         Raise Empty exception if the queue is empty.
         """
         if self.is_empty():
-            raise Empty('Queue is empty.')
+            # raise Empty('Queue is empty.')
+            return None
         second = self._tail._next._next
         return second._element
 
@@ -51,7 +53,8 @@ class CircleQueue:
         Raise Empty exception if the queue is empty.
         """
         if self.is_empty():
-            raise Empty('Queue is empty.')
+            # raise Empty('Queue is empty.')
+            return None
         oldhead = self._tail._next
         if self._size == 1:  # removing only element
             self.tail = None  # queue becomes empty

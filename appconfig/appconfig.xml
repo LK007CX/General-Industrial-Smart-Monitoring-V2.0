@@ -1,8 +1,8 @@
 <appsettings>
 	<model>
-		<modelpath>/home/edit/Desktop/General-Industrial-Smart-Monitoring-V2.0/ichia_data/yolov3-tiny-416.trt</modelpath>
+		<modelpath>ichia_data/yolov3-tiny-416.trt</modelpath>
 		<size>416*416</size>
-		<labelsfile>/home/edit/Desktop/General-Industrial-Smart-Monitoring-V2.0/ichia_data/yy.names</labelsfile>
+		<labelsfile>ichia_data/yy.names</labelsfile>
 		<thresh>0.49</thresh>
 		<category_num>6</category_num>
 	</model>
@@ -18,9 +18,9 @@
 	</remotecv>
 	<output>
 		<enable>1</enable>
-		<mode>low</mode>
-		<time>0.2</time>
-		<pin>18</pin>
+		<mode>high</mode>
+		<time>0.5</time>
+		<pin>15</pin>
 	</output>
 	<video>
 		<enable>0</enable>
@@ -29,31 +29,63 @@
 	</video>
 	<detect_items>
 		<temp>leave this node alone...</temp>
-		<template_image>/home/edit/Desktop/General-Industrial-Smart-Monitoring-V2.0/icon/template.jpg</template_image>
-		<time_delay>20</time_delay>
+		<template_image>icon/template.jpg</template_image>
+		<time_delay>60</time_delay>
 		<item>
 			<index>0</index>
-			<category>person</category>
+			<category>Place_fpc</category>
 			<frames>1</frames>
-			<time>0.3</time>
-			<thresh>0.3</thresh>
-			<coordinate>192,413,1446,692</coordinate>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>985,128,1260,507</coordinate>
 		</item>
 		<item>
 			<index>1</index>
-			<category>tvmonitor</category>
+			<category>Jig_front</category>
 			<frames>1</frames>
-			<time>0.2</time>
-			<thresh>0.3</thresh>
-			<coordinate>139,443,1182,665</coordinate>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>490,251,965,453</coordinate>
 		</item>
 		<item>
 			<index>2</index>
-			<category>mouse</category>
+			<category>Jig_back</category>
 			<frames>1</frames>
-			<time>0.3</time>
-			<thresh>0.3</thresh>
-			<coordinate>254,413,1147,617</coordinate>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>331,212,960,433</coordinate>
+		</item>
+		<item>
+			<index>3</index>
+			<category>Inspection</category>
+			<frames>1</frames>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>377,261,946,679</coordinate>
+		</item>
+		<item>
+			<index>4</index>
+			<category>Jig_back</category>
+			<frames>1</frames>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>315,173,934,506</coordinate>
+		</item>
+		<item>
+			<index>5</index>
+			<category>Jig_front</category>
+			<frames>1</frames>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>330,152,949,513</coordinate>
+		</item>
+		<item>
+			<index>6</index>
+			<category>Receive_fpc</category>
+			<frames>1</frames>
+			<time>0.05</time>
+			<thresh>0.1</thresh>
+			<coordinate>24,88,324,528</coordinate>
 		</item>
 	</detect_items>
 	<app>

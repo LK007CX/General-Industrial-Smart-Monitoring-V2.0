@@ -12,7 +12,7 @@ docker volume rm video
 docker volume create video
 
 # load gism docker image
-docker load < gism-v1.5.1.img
+# docker load < gism-v2.0img
 
 # make desktop icon
 path=GISM.desktop

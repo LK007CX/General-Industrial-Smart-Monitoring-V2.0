@@ -10,4 +10,4 @@ docker run -it \
 -v video:/app/video \
 --mount type=bind,source=/home/edit/app/gism/model,target=/app/custom_model \
 --privileged \
-gism:v1.5.1
+gism:v2.0
