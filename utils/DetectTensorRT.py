@@ -451,8 +451,8 @@ class DetectTensorRT(QThread):
             if self.enable_video_save:
                 self.write_frame_to_video_writer_signal.emit(img)
 
-            for rect in self.draw_list:
-                cv2.rectangle(img, (rect.minx, rect.miny), (rect.maxx, rect.maxy), (255, 89, 2), 2)
+            # for rect in self.draw_list:
+            #     cv2.rectangle(img, (rect.minx, rect.miny), (rect.maxx, rect.maxy), (255, 89, 2), 2)
 
             img = show_fps(img, fps)
             self.image_Signal.emit(img)

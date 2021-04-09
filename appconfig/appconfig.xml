@@ -23,7 +23,7 @@
 		<pin>15</pin>
 	</output>
 	<video>
-		<enable>0</enable>
+		<enable>1</enable>
 		<only_ng>1</only_ng>
 		<max_save_count>110</max_save_count>
 	</video>
