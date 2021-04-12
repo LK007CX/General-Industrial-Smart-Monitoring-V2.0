@@ -5,7 +5,7 @@ import sys
 import time
 import xml.etree.ElementTree as ET
 
-from PyQt5.QtCore import QSize, Qt
+from PyQt5.QtCore import QSize, Qt, QWaitCondition
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import (QApplication, QDesktopWidget, QHBoxLayout, QLabel,
                              QMainWindow, QMessageBox, QStatusBar, QVBoxLayout,
@@ -30,7 +30,6 @@ TO DO LIST
 """
 
 canRestart = True
-
 
 def restart(twice):
     """
@@ -283,7 +282,7 @@ class MainWindow(QMainWindow):
     def init_thread(self):
         try:
             self.thread = DetectTensorRT(self.args)
-            self.saveVideoThread = SaveVideoThread()
+            self.saveVideoThread = SaveVideoThread("./video/")
             self.deleteFileThread = DeleteFileThread("./video/", self.args.max_save_video_count)
             self.gpio_thread = GPIOThread(args=self.args)
             self.thread.draw_list = self.draw_list
@@ -298,6 +297,8 @@ class MainWindow(QMainWindow):
             self.thread.write_frame_to_video_writer_signal.connect(self.saveVideoThread.write_frame_to_video_writer)
             self.thread.gpio_signal.connect(self.gpio_thread.custom_output)
             self.thread.num_signal.connect(self.countWidget.set_value)
+            self.saveVideoThread.resume_signal.connect(self.thread.pause_ng)
+            # self.saveVideoThread.resume_signal.connect(self.thread.resume)
             self.thread.start()
             self.deleteFileThread.start()
         except Exception as e:

@@ -3,7 +3,7 @@
 import cv2
 import os
 
-from PyQt5.QtCore import QThread
+from PyQt5.QtCore import QThread, pyqtSignal
 
 """
 TO DO LIST
@@ -16,8 +16,11 @@ class SaveVideoThread(QThread):
     Save video to the local disk storage.
     """
 
-    def __init__(self, *args, **kwargs):
+    resume_signal = pyqtSignal()
+
+    def __init__(self, save_path, *args, **kwargs):
         super(SaveVideoThread, self).__init__(*args, **kwargs)
+        self.save_path = save_path
         self.out = None
         self.save_string = ''
 
@@ -32,7 +35,14 @@ class SaveVideoThread(QThread):
         self.save_string = save_string
         print("Video: Start to save work circle video.")
         print("Video: The video will save to：\t\t\t" + self.save_string)
-        self.out = cv2.VideoWriter(self.save_string, cv2.VideoWriter_fourcc(*"DIVX"), 25, (width, height))
+        print(self.save_path + self.save_string + ".avi")
+        # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"XVID"), 25, (width, height))
+        # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"DIVX"), 25, (width, height))
+
+        # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".mp4", cv2.VideoWriter_fourcc(*"MP4V"), 25, (width, height))
+        # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".mp4", cv2.VideoWriter_fourcc(*"MJPG"), 25, (width, height))
+        self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"H264"), 25, (width, height))
+        # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"PIM1"), 25, (width, height))
 
     def end_save_task(self, result, only_save_ng_video):
         """
@@ -60,6 +70,9 @@ class SaveVideoThread(QThread):
         :param image: current image emitted from the detect thread
         :return: None
         """
-
-        if self.out is not None:
-            self.out.write(image)
+        try:
+            if self.out is not None:
+                self.out.write(image)
+                pass
+        finally:
+            self.resume_signal.emit()

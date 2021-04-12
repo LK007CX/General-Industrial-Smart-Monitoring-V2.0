@@ -146,8 +146,22 @@ class DetectTensorRT(QThread):
         """thread lock"""
         self._mutex = QMutex()
 
+        self._thread_lock = QMutex()
+        self._cond = QWaitCondition()
+        self._isPause = False
+
         self.ok_num = 0
         self.ng_num = 0
+    
+    def resume(self):
+        self._cond.wakeAll()
+        print(str(datetime.datetime.now()) + " resume the detect thread")
+    
+    
+    
+    def pause_ng(self):
+        self._isPause = False
+        print(str(datetime.datetime.now()) + " resume the detect thread")
 
     def load_action(self):
         """enqueue the action to the CircleQueue"""
@@ -227,13 +241,13 @@ class DetectTensorRT(QThread):
         """emit a signal that will display the state of partial result."""
         self.partial_result_Signal.emit(self.results)
 
-    def start_work(self, save_string, width, height, current_time):
+    def start_work(self, width, height, current_time):
         self.logger.info("******************************************************************************************")
         self.logger.info("[Func] start_work - Start of a work circle")
 
         """save circle video or not?"""
         if self.enable_video_save:
-            self.start_save_task_signal.emit(save_string, width, height)
+            self.start_save_task_signal.emit(current_time, width, height)
 
         """reset the results(nodes and start time, end time)"""
         self.results.reset_result()
@@ -306,11 +320,14 @@ class DetectTensorRT(QThread):
         if img is not None:
             cv2.imwrite("icon/template.jpg", img)
         while True:
+            # self._thread_lock.lock()
+            if self._isPause:
+                continue
             # self.logger.info("[Func] loop_and_detect - Start a image detect circle")
             img = self.cam.read()
             if img is None:
                 break
-
+            
             stop_flag = True  # to assert the timeout function can be carried out
 
             boxes, confs, clss = self.trt_yolo.detect(img, self.conf_th)  # model output results
@@ -366,8 +383,7 @@ class DetectTensorRT(QThread):
                     # time.sleep(0.5)
                     if self.current_action.index == 0:
                         # self.logger.info("[Func] loop_and_detect - do start_work")
-                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
-                                        current_time)
+                        self.start_work(self.args.width, self.args.height, current_time)
 
                     # allow close the circle
                     if self.current_action.index == 1:
@@ -401,8 +417,7 @@ class DetectTensorRT(QThread):
                         self.logger.info("[Func] loop_and_detect - End early - do end_work")
                         self.end_work()
                         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
-                                        current_time)
+                        self.start_work(self.args.width, self.args.height, current_time)
                 if self.allow_time_dalay:
                     if self.time_delay.allow_rotate(label, rect):
 
@@ -422,8 +437,7 @@ class DetectTensorRT(QThread):
                         self.logger.info("[Func] loop_and_detect - Time out - do end_work")
                         self.end_work()
                         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
-                                        current_time)
+                        self.start_work(self.args.width, self.args.height, current_time)
 
             if stop_flag:
                 if self.allow_time_dalay:
@@ -443,13 +457,11 @@ class DetectTensorRT(QThread):
                         self.logger.info("[Func] loop_and_detect - Time out - do end_work")
                         self.end_work()
                         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height,
-                                        current_time)
+                        self.start_work(self.args.width, self.args.height, current_time)
 
             img = self.vis.draw_bboxes(img, boxes, confs, clss)
 
-            if self.enable_video_save:
-                self.write_frame_to_video_writer_signal.emit(img)
+            
 
             # for rect in self.draw_list:
             #     cv2.rectangle(img, (rect.minx, rect.miny), (rect.maxx, rect.maxy), (255, 89, 2), 2)
@@ -460,11 +472,19 @@ class DetectTensorRT(QThread):
             if self.enable_remote_cv:
                 global global_image
                 global_image = copy.deepcopy(img)
+
+            if self.enable_video_save:
+                self.write_frame_to_video_writer_signal.emit(copy.deepcopy(img))
+                self._isPause = True
+                # self._cond.wait(self._thread_lock)  # pause the thread
+                print(str(datetime.datetime.now()) + " pause the detect thread")
+            
             toc = time.time()
             curr_fps = 1.0 / (toc - tic)
             # 计算fps数的指数衰减平均值
             fps = curr_fps if fps == 0.0 else (fps * 0.95 + curr_fps * 0.05)
             tic = toc
+            # self._thread_lock.unlock()
 
     def insert_into_db(self, start_time, end_time, result):
         self._mutex.lock()
@@ -496,7 +516,7 @@ class DetectTensorRT(QThread):
             self.load_action()
             self.load_model()
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            self.start_work("./video/" + current_time + ".avi", self.args.width, self.args.height, current_time)
+            self.start_work(self.args.width, self.args.height, current_time)
             self.loop_and_detect()
         finally:
             self.cam.release()

@@ -14,7 +14,7 @@
 		<height>720</height>
 	</camera>
 	<remotecv>
-		<enable>1</enable>
+		<enable>0</enable>
 	</remotecv>
 	<output>
 		<enable>1</enable>
