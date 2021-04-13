@@ -161,7 +161,7 @@ class DetectTensorRT(QThread):
     
     def pause_ng(self):
         self._isPause = False
-        print(str(datetime.datetime.now()) + " resume the detect thread")
+        # self.logger.info(str(datetime.datetime.now()) + " resume the detect thread")
 
     def load_action(self):
         """enqueue the action to the CircleQueue"""
@@ -313,6 +313,7 @@ class DetectTensorRT(QThread):
         self.logger.info("[Func] end_work - End of a work cycle")
 
     def loop_and_detect(self):
+        SAVE_INTERVAL = 0
         detect_labels = [item.category for item in self.item_list]  # all labels to be detected
         fps = 0.0
         tic = time.time()  # to calculate the fps
@@ -473,12 +474,16 @@ class DetectTensorRT(QThread):
                 global global_image
                 global_image = copy.deepcopy(img)
 
-            if self.enable_video_save:
+            if self.enable_video_save and SAVE_INTERVAL % 2 == 0:
+            # if self.enable_video_save:
                 self.write_frame_to_video_writer_signal.emit(copy.deepcopy(img))
                 self._isPause = True
                 # self._cond.wait(self._thread_lock)  # pause the thread
-                print(str(datetime.datetime.now()) + " pause the detect thread")
-            
+                # self.logger.info(str(datetime.datetime.now()) + " pause the detect thread")
+            # update the SAVE_INTERVAL
+            SAVE_INTERVAL += 1
+            if SAVE_INTERVAL == 1000:
+                SAVE_INTERVAL = 0
             toc = time.time()
             curr_fps = 1.0 / (toc - tic)
             # 计算fps数的指数衰减平均值

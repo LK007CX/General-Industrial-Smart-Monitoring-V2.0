@@ -41,7 +41,7 @@ class SaveVideoThread(QThread):
 
         # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".mp4", cv2.VideoWriter_fourcc(*"MP4V"), 25, (width, height))
         # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".mp4", cv2.VideoWriter_fourcc(*"MJPG"), 25, (width, height))
-        self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"H264"), 25, (width, height))
+        self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"H264"), 15, (width, height))
         # self.out = cv2.VideoWriter(self.save_path + self.save_string + ".avi", cv2.VideoWriter_fourcc(*"PIM1"), 25, (width, height))
 
     def end_save_task(self, result, only_save_ng_video):
