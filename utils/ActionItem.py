@@ -8,7 +8,7 @@ from utils.Item import Item
 class ActionItem(Item):
     __slots__ = 'index', 'category', 'confirm_frames', 'confirm_time', 'thresh', \
                 '_label_list', '_time_list', 'coordinate', '_done'
-
+                                                                                                                                                                                                                                                                                                                                                                            
     def __init__(self, *args, **kwargs):
         for k, v in kwargs.items():
             setattr(self, k, v)
