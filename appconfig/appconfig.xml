@@ -1,6 +1,6 @@
 <appsettings>
 	<model>
-		<modelpath>ichia_data/yolov3-tiny-416.trt</modelpath>
+		<modelpath>/home/edit/General-Industrial-Smart-Monitoring-V2.0/ichia_data_2021_4_29/yolov4-tiny-416.trt</modelpath>
 		<size>416*416</size>
 		<labelsfile>ichia_data/yy.names</labelsfile>
 		<thresh>0.49</thresh>
@@ -17,14 +17,14 @@
 		<enable>0</enable>
 	</remotecv>
 	<output>
-		<enable>1</enable>
+		<enable>0</enable>
 		<mode>high</mode>
 		<time>0.5</time>
 		<pin>15</pin>
 	</output>
 	<video>
-		<enable>1</enable>
-		<only_ng>1</only_ng>
+		<enable>0</enable>
+		<only_ng>0</only_ng>
 		<max_save_count>110</max_save_count>
 	</video>
 	<detect_items>
