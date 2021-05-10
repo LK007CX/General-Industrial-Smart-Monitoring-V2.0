@@ -106,6 +106,7 @@ class MainWindow(QMainWindow):
 
         self.setObjectName("MainWindow")
         self.center()
+        self.showMaximized()
 
     def resizeEvent(self, QResizeEvent):
         """

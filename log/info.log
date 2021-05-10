@@ -3201,3 +3201,38 @@
 2021-04-29 18:32:34,075 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1619692354.0741088
 2021-04-29 18:32:34,076 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
 2021-04-29 18:32:34,076 - root - INFO - Camera: using USB webcam /dev/video0
+2021-05-08 15:57:19,598 - root - INFO - The application is starting...
+2021-05-08 15:57:20,974 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 15:57:20,975 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1620460640.9756162
+2021-05-08 15:57:20,976 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 15:57:20,977 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1620460640.9756162
+2021-05-08 15:57:20,978 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-08 15:57:20,978 - root - INFO - Camera: using USB webcam /dev/video0
+2021-05-08 16:00:29,358 - root - INFO - The application is starting...
+2021-05-08 16:00:30,777 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:00:30,778 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1620460830.7782505
+2021-05-08 16:00:30,779 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:00:30,779 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1620460830.7782505
+2021-05-08 16:00:30,780 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-08 16:00:30,780 - root - INFO - Camera: using USB webcam /dev/video0
+2021-05-08 16:01:23,034 - root - INFO - The application is starting...
+2021-05-08 16:01:24,162 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:01:24,163 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1620460884.1632571
+2021-05-08 16:01:24,164 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:01:24,165 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1620460884.1632571
+2021-05-08 16:01:24,167 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-08 16:04:09,715 - root - INFO - The application is starting...
+2021-05-08 16:04:10,552 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:04:10,553 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1620461050.5535219
+2021-05-08 16:04:10,554 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:04:10,555 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1620461050.5535219
+2021-05-08 16:04:10,555 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-08 16:04:50,500 - root - INFO - The application is starting...
+2021-05-08 16:04:51,336 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:04:51,337 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1620461091.3370597
+2021-05-08 16:04:51,337 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-08 16:04:51,338 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1620461091.3370597
+2021-05-08 16:04:51,338 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-08 16:04:51,339 - root - INFO - Camera: using USB webcam /dev/video0
+2021-05-08 16:05:00,549 - utils.DetectTensorRT - INFO - ******************************************************************************************
+2021-05-08 16:05:00,550 - utils.DetectTensorRT - INFO - [Func] start_work - Start of a work circle
