@@ -198,8 +198,10 @@ class DetectTensorRT(QThread):
     def load_model(self):
         if self.args.category_num <= 0:
             raise SystemExit('ERROR: bad category_num (%d)!' % self.args.category_num)
+        # print("===============================")
+        # print(self.args.model_path)
         if not os.path.isfile(self.args.model_path):
-            raise SystemExit('ERROR: file (model/%s.trt) not found!' % self.args.model_path)
+            raise SystemExit('ERROR: model file %s not found!' % self.args.model_path)
         self.cam = Camera(self.args)
         if not self.cam.isOpened():
             # raise SystemExit('ERROR: failed to open camera!')
