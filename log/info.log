@@ -3314,3 +3314,45 @@
 2021-05-17 18:15:26,439 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
 2021-05-17 18:15:26,442 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1621246526.4390433
 2021-05-17 18:15:26,442 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-26 09:48:58,676 - root - INFO - The application is starting...
+2021-05-26 09:48:59,998 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:48:59,999 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1621993739.9991293
+2021-05-26 09:49:00,000 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:49:00,000 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1621993739.9991293
+2021-05-26 09:49:00,001 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-26 09:49:40,962 - root - INFO - The application is starting...
+2021-05-26 09:49:41,833 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:49:41,834 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1621993781.833982
+2021-05-26 09:49:41,835 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:49:41,836 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1621993781.833982
+2021-05-26 09:49:41,836 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-26 09:49:41,837 - root - INFO - Camera: using RTSP stream ﻿rtsp://admin:123456@192.168.1.121:554/h264/ch0/main/av_stream
+2021-05-26 09:49:42,392 - root - WARNING - Camera: starting while cap is not opened!
+2021-05-26 09:49:42,394 - utils.DetectTensorRT - INFO - [Func] load_model - ERROR: failed to open camera, try to restart the application to connect the camera/.
+2021-05-26 09:49:45,059 - root - INFO - The application is starting...
+2021-05-26 09:49:45,949 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:49:45,950 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1621993785.9502683
+2021-05-26 09:49:45,951 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:49:45,951 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1621993785.9502683
+2021-05-26 09:49:45,952 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-26 09:49:45,952 - root - INFO - Camera: using RTSP stream ﻿rtsp://admin:123456@192.168.1.121:554/h264/ch0/main/av_stream
+2021-05-26 09:49:46,513 - root - WARNING - Camera: starting while cap is not opened!
+2021-05-26 09:49:46,514 - utils.DetectTensorRT - INFO - [Func] load_model - ERROR: failed to open camera, try to restart the application to connect the camera/.
+2021-05-26 09:52:26,134 - root - INFO - The application is starting...
+2021-05-26 09:52:27,035 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:52:27,036 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1621993947.036402
+2021-05-26 09:52:27,037 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:52:27,038 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1621993947.036402
+2021-05-26 09:52:27,038 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-26 09:52:27,039 - root - INFO - Camera: using RTSP stream ﻿rtsp://admin:123456@192.168.1.121:554/h264/ch0/main/av_stream
+2021-05-26 09:52:27,607 - root - WARNING - Camera: starting while cap is not opened!
+2021-05-26 09:52:27,607 - utils.DetectTensorRT - INFO - [Func] load_model - ERROR: failed to open camera, try to restart the application to connect the camera/.
+2021-05-26 09:52:30,324 - root - INFO - The application is starting...
+2021-05-26 09:52:31,193 - utils.DetectTensorRT - INFO - [Func] load_action - current action: 	[ActionItem] index:0--category:Place_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:52:31,194 - utils.DetectTensorRT - INFO - [Func] load_action - time action: 	[TimeItem] time delay:60--start time:1621993951.1940155
+2021-05-26 09:52:31,194 - utils.DetectTensorRT - INFO - [Func] load_action - stop action: 	[ActionItem] index:6--category:Receive_fpc--confirm frames:1--confirm time:0.05--thresh:0.1
+2021-05-26 09:52:31,195 - utils.DetectTensorRT - INFO - [Func] load_action - time delay: 	[TimeItem] time delay:60--start time:1621993951.1940155
+2021-05-26 09:52:31,196 - utils.DetectTensorRT - INFO - [Func] load_action - results: 	[Result] [[ResultNode] index:0--label:None--result:None--time:None [ResultNode] index:1--label:None--result:None--time:None [ResultNode] index:2--label:None--result:None--time:None [ResultNode] index:3--label:None--result:None--time:None [ResultNode] index:4--label:None--result:None--time:None [ResultNode] index:5--label:None--result:None--time:None [ResultNode] index:6--label:None--result:None--time:None ]
+2021-05-26 09:52:31,196 - root - INFO - Camera: using RTSP stream ﻿rtsp://admin:123456@192.168.1.121:554/h264/ch0/main/av_stream
+2021-05-26 09:52:31,752 - root - WARNING - Camera: starting while cap is not opened!
+2021-05-26 09:52:31,753 - utils.DetectTensorRT - INFO - [Func] load_model - ERROR: failed to open camera, try to restart the application to connect the camera/.

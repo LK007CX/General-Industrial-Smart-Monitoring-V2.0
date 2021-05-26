@@ -7,9 +7,9 @@
 		<category_num>6</category_num>
 	</model>
 	<camera>
-		<mode>USB</mode>
+		<mode>RTSP</mode>
 		<camera_id>0</camera_id>
-		<ip>rtsp://admin:admin@192.168.0.100:554/cam/realmonitor?channel=1&amp;subtype=0</ip>
+		<ip>﻿rtsp://admin:123456@192.168.1.121:554/h264/ch0/main/av_stream</ip>
 		<width>1280</width>
 		<height>720</height>
 	</camera>
