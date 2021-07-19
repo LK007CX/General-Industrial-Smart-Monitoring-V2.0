@@ -1,9 +1,0 @@
-2021-03-31 10:42:03,681 - __main__ - INFO - Start print log
-2021-03-31 10:42:03,681 - __main__ - WARNING - Something maybe fail.
-2021-03-31 10:42:03,681 - __main__ - INFO - Finish
-2021-03-31 10:42:20,696 - __main__ - INFO - Start print log
-2021-03-31 10:42:20,696 - __main__ - WARNING - Something maybe fail.
-2021-03-31 10:42:20,696 - __main__ - INFO - Finish
-2021-03-31 10:42:40,872 - __main__ - INFO - Start print log
-2021-03-31 10:42:40,872 - __main__ - WARNING - Something maybe fail.
-2021-03-31 10:42:40,872 - __main__ - INFO - Finish
